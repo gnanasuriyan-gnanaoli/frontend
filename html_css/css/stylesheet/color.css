@@ -1,0 +1,19 @@
+body{
+  color: #fff;
+  background-color: grey;
+  /*padding: 10px;*/
+  margin: 10px;
+}
+h1{
+  background-color: DarkCyan;
+    padding: 10px;
+}
+h2{
+  background-color:  #ee3e80;
+    padding: 10px;
+}
+p{
+  background-color:  #fff;
+  color: rgb(100,100,90);
+    padding: 10px;
+}
