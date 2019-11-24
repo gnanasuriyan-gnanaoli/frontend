@@ -1,0 +1,16 @@
+.row{
+  display: flex;
+  max-width: 300px;
+}
+.row > div{
+  padding: 12px;
+  text-align: center;
+  border: 1px dashed black;
+  flex: 1 1 20em;
+}
+.row > .diff{
+  padding: 12px;
+  text-align: center;
+  border: 1px dashed black;
+  flex: 2 2 20em;
+}
