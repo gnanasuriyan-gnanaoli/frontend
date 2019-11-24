@@ -1,0 +1,37 @@
+.box{
+  border: 1px dashed crimson;
+  width: 300px;
+  height: 300px;
+}
+.fixed-width{
+  width: 400px;
+  height: 100px;
+}
+.percentage-width{
+  width: 70%;
+  height: 75%;
+}
+.overflow{
+  overflow: hidden;
+}
+
+.margin{
+  width: 400px;
+  padding: 10px;
+  margin: 10px;
+  background-color: yellow;
+}
+.margin-innertext{
+  background-color: black;
+  color: white;
+}
+
+.solid{ border-style: solid;}
+.dotted{ border-style: dotted;}
+.dashed{ border-style: dashed;}
+.double{ border-style: double;}
+.groove{ border-style: groove;}
+.ridge{ border-style: ridge;}
+.inset{ border-style: inset;}
+.outset{ border-style: outset;}
+

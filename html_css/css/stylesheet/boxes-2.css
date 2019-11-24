@@ -1,0 +1,15 @@
+.box{
+  margin: 10px;
+  border: 3px dotted grey;
+  padding: 10px;
+  background-color: crimson;
+  color: white;
+}
+p{
+  margin:0px;
+  padding:0px;
+}
+.center{
+  text-align: center;
+  margin: 0px auto 0px auto;
+}
