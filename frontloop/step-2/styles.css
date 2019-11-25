@@ -1,5 +1,6 @@
 body{
   background-image: url("img/background.jpg");
+  background-size: cover;
   font-family: Roboto, sans-serif;
   font-weight: 500;
   letter-spacing: 2px;
