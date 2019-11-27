@@ -1,0 +1,69 @@
+body{
+  /*background: url('./img/background.jpg') no-repeat 50%;*/
+  background-image: url('img/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+.container{
+  margin: 100px auto;
+  width: 320px;
+  background-color: white;
+  padding: 30px 40px;
+}
+.where{
+  padding: 30px 0px;
+}
+.seating{
+  padding: 30px 0px 10px;
+}
+.where, .seating {
+  display: flex;
+}
+.dash{
+  margin: auto;
+  text-align: center;
+}
+.flex-box{
+  width: 33%;
+}
+.short{
+  color: rgb(80, 136, 202);
+}
+.short, .dash{
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-family: Prompt, sans-serif;
+}
+.full, .dash{
+  color: lightgray;
+}
+.full{
+  font-size: 13px;
+}
+.to{
+  text-align: right;
+}
+
+.title{
+  color: lightgray;
+  font-size: 12px;
+}
+
+.flex-box-details{
+  padding-top: 10px;
+  display: flex;
+}
+.flex-box-details > .title,.value{
+  padding: 10px 0px 10px 0px;
+}
+.qrcode{
+  margin-right: 0px;
+  margin-left: auto;
+}
+.qrcode > img{
+  width: 150px;
+}
