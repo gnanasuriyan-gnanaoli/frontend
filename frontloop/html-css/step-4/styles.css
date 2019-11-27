@@ -1,0 +1,96 @@
+body{
+  font-family: sans-serif;
+  background: rgb(105,109,110);
+  background: linear-gradient(90deg, rgba(105,109,110,1) 0%, rgba(193,230,255,1) 0%);
+  font-size: 12px;
+}
+
+.container{
+  width: 400px;
+  margin: 100px auto 100px auto;
+  text-align: left;
+  background-color: white;
+}
+.heading{
+  height: 40px;
+  background-color: rgb(115,149,211);
+  color: white;
+  padding: 10px 20px;
+  line-height: 40px;
+}
+.name{
+  float: left;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
+.close{
+  float: right;
+}
+.close-image{
+  vertical-align: middle;
+}
+.date{
+  color: lightgrey;
+  padding: 20px 2px 10px 2px;
+  text-align: center;
+}
+
+.message{
+  margin: 10px 20px 10px 20px;
+  font-weight: 500;
+  
+}
+
+.text{
+  border-radius: 4px;
+  background-color: rgb(231, 236, 245);
+  max-width: 270px;
+  margin: 5px 0px 5px 0px;
+  padding: 10px;
+  font-size: 14px;
+}
+.left{
+  display: inline-block;
+}
+.right-text{
+  background-color: rgb(242, 242, 242);
+  margin-right: 0px;
+  margin-left: auto;
+}
+
+.time{
+  color: grey;
+}
+
+.right > .time{
+  text-align: right;
+}
+
+.blocked{
+  background-color: rgb(245, 197, 195);
+}
+
+hr{
+  margin: 10px 20px;
+}
+
+input{
+  margin: 0px 20px 10px;
+  border: 0px;
+  height: 20px;
+  outline: none;
+  font-size: inherit;
+}
+
+a.send-button{
+  letter-spacing: 1px;
+  float: right;
+  margin-right: 20px;
+  font-size: 1em;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: rgb(115,148,211);
+  text-decoration: none;
+  
+}
