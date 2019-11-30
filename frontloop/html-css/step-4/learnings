@@ -1,4 +1,0 @@
-Set line-height to height of div to align image in middle. vertical-align middle
-does not work.
-
-To pull div right => margin-right: 0px; margin-left: auto;

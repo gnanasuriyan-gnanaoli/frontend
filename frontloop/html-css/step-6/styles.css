@@ -1,0 +1,73 @@
+body{
+  background-color: rgb(77, 81, 92);
+  font-family: Roboto, sans-serif;
+  font-size: 0.75em;
+  font-weight: 500;
+}
+
+.container{
+  width: 1000px;
+  margin: 50px auto;
+  background-color: white;
+  border-radius: 3px;
+  display: flex;
+  box-shadow: 0 22px 50px rgba(14,21,47, .2), 0 8px 20px rgba(14,21,47, .2);
+}
+
+h1{
+  font-weight: 300;
+  font-size: 3em;
+  margin: 0px;
+}
+.left{
+  margin: 80px 60px 0px;
+  width: 60%;
+}
+
+.social{
+  margin: 60px 0px 80px 0px;
+}
+.social > div{
+  transition: box-shadow .3s;
+  border: 1px solid rgb(241,241,241);
+  border-radius: 2px;
+  margin: 20px 0px;
+  padding: 5px 20px;
+}
+
+.social > div:hover {
+  box-shadow: 0px 0px 10px rgba(33,33,33,.2); 
+}
+.social p{
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+.social .icon{
+  float: left;
+  width: 20px;
+}
+.side {
+  width: 40%;
+}
+.footer-text{
+  margin: 30px 0px;
+}
+.footer-text > .footer-left{
+  display: inline-block;
+}
+.footer-text > .footer-right{
+  display: inline-block;
+  float: right;
+  font-size: 0.9em;
+
+}
+.caps{
+  text-transform: uppercase;
+  font-size: 
+}
+.grey{
+  color: rgb(140, 140, 140);
+}
