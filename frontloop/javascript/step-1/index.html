@@ -2,11 +2,40 @@
 <html>
 <head>
     <title>Segmented control</title>
+    <link rel="stylesheet" href="css/master.css">
 </head>
 <body>
+  <div class="container">
+    <div class="price button">
+      Sort by price
+    </div>
+    <div class="name button">
+      Sort by name
+    </div>
+    <div class="relevance button">
+      Sort by relevance
+    </div>
+  </div>
   <script type="text/javascript">
-    document.write("Hello World");
-  </script>
+  
+  
+  console.log("wow");
+  changeBackground = function(element){
+    // console.log(element[0]);
+  }
+    var fields = document.getElementsByClassName('button');
+    for(var i =0; i< fields.length; i++){
+      console.log(fields[i]);
+      fields[i].onclick = function(index = i) {
+        debugger
+        document.getElementsByClassName('button')[index].style.backgroundColor = 'rgb(101, 149, 248)';
+        document.getElementsByClassName('button')[index].style.color = 'white';
+        debugger
+      }
+    }
+    
+    
+    </script>
     <!--
         Create a segmented control that turns into a <select> for mobile screens.
         They should sync whenever any of them is changed.

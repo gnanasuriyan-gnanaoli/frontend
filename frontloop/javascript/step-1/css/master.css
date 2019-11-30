@@ -1,0 +1,17 @@
+body{
+  background-color: rgb(132, 184, 249);
+}
+.container{
+  max-width: 900px;
+  background-color: white;
+  margin: 100px auto;
+  padding: 40px;
+  display: flex;
+}
+
+.container > div{
+  width: auto;
+  border: 1px solid rgb(101, 149, 248);
+  padding: 10px;
+  
+}
