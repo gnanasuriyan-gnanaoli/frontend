@@ -4,3 +4,4 @@ function addScript( src ) {
   script.setAttribute( 'src', src );
   document.body.appendChild( script );
 }
+addScript(src);
