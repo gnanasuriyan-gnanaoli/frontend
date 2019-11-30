@@ -1,17 +1,23 @@
 var body = document.getElementsByTagName("body")[0];
-iterateChildNodes(body);
-function iterateChildNodes(element){
+addBorderAnditerateChildNodes(body);
+function addBorderAnditerateChildNodes(element){
   addBorder(element);
+  iterate(element);
+}
+function iterate(element){
   for(item in element.children){
     childItem = element.children[item];
     addBorder(childItem);
-    if(childItem.children.length > 0){
-      iterateChildNodes(childItem);
+    if(childItem.children != undefined && childItem.children.length > 0){
+      addBorderAnditerateChildNodes(childItem);
     }
   }
 }
 function addBorder(element){
-  debugger
-  element.style.border= "1px solid rgb(238, 62, 128)";
-  element.style.borderRadius= "100%";
+  if(element.style != undefined){
+    element.style.border= "1px solid rgb(238, 62, 128)";
+    element.style.borderRadius= "50%";
+    element.style.overflow= "visible";
+  }
 }
+
