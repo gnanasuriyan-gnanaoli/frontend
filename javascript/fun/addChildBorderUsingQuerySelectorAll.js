@@ -5,6 +5,7 @@ for(item in elements){
 function addBorder(element){
   if(element.style != undefined){
     element.style.border= "1px solid rgb(238, 62, 128)";
+    element.style.outline = "1px solid";
     element.style.borderRadius= "50%";
     element.style.overflow= "visible";
   }
