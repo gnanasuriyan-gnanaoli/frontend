@@ -4,3 +4,4 @@ Vertical Align image with text:
 To Pull div right
  - margin-right: 0px; margin-left: auto;
 
+To make a PNG Overlap, use negative margin.(step-3 check out the bicycle)
