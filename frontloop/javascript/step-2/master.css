@@ -1,0 +1,40 @@
+body{
+  background-color: rgb(68,126,180);
+}
+
+.container{
+    width: 700px;
+    margin: 150px auto;
+    background-color: white;
+    padding: 40px 40px;
+    border-radius: 4px;
+}
+
+.input-container{
+  display: flex;
+  height: 40px;
+  font-size: 20px;
+
+}
+.input-container > input{
+  font-size: inherit;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  width: 80%;
+  margin-right: 10px;
+}
+.input-container > button{
+  font-size: inherit;
+  width: 20%;
+}
+.tabs{
+  display: flex;
+}
+
+.tabs > div{
+  padding: 20px 20px 20px 0px;
+}
+.selected{
+  font-weight: bold;
+}

@@ -2,13 +2,66 @@
 <html>
 <head>
     <title>Progress navigation</title>
+    <link rel="stylesheet" href="master.css">
 </head>
 <body>
-    <!--
-        Create Tabs component, that has several tab buttons. Each button toggles active tab content.
-        Add a text input with a button. User can enter any tab index in the input and toggle it by clicking the button.
-        Indexes in this task are not the same as they are used in JS, so by entering 1 - first tab should be shown, not 0.
-        If invalid index is entered - browser must show an alert.
-    -->
+  <div class="container">
+    <div class="input-container">
+      <input type="text" id='tab-num' placeholder="Enter tab index" name="" value="">  
+      <button type="button" name="change-tab" class="change-tab">Change Tab</button>
+    </div>
+    
+    <div class="tabs">
+      <div class="positive selected" data="1">POSITIVE</div>
+      <div class="negative" data="2">NEGATIVE</div>
+      <div class="neutral" data="3">NEUTRAL</div>
+    </div>
+    <p class="content">Positive Content</p>
+  </div>
+  <script type="text/javascript">
+    var content_hash = { 1: "Positive Content", 2: "Negative Content",
+                         3: "Neutral Content" };
+    var tabs = document.querySelectorAll(".tabs > div");
+    var content = document.querySelector(".content");
+    var button = document.querySelector(".change-tab");
+    tabs.forEach(function(tab){
+      tab.addEventListener('click', function(){
+        unselect();
+        tab.classList.add("selected");
+        content.innerText = content_hash[tab.getAttribute('data')];
+      }); 
+    });
+    function changeContent(tab){
+      unselect();
+      tab.classList.add("selected");
+      content.innerText = content_hash[tab.getAttribute('data')];
+    }
+    function unselect(){
+      tabs.forEach(function(tab){
+        tab.classList.remove("selected");
+      });
+    }
+    button.addEventListener('click', function(event){
+      event.preventDefault();
+      var text = document.getElementById("tab-num").value;
+      debugger
+      if(content_hash[text] != undefined || content_hash[text] < 3 || content_hash[text] > 1){
+        content.innerText = content_hash[text];
+        unselect();
+        selectTab(text);
+      }
+    })
+
+
+    function selectTab(tab_id){
+      debugger
+      tabs.forEach(function(tab){
+        debugger
+        if (tab.getAttribute('data') == tab_id){
+          tab.classList.add("selected");
+        }
+      });
+    }
+  </script>
 </body>
 </html>

@@ -1,0 +1,13 @@
+body{
+  background-color: rgb(246, 235, 233);
+}
+
+.container{
+  margin: 40px auto;
+  width: 950px;
+  background-color: white;
+  display: flex;
+}
+.background{
+  width: 35%;
+}
