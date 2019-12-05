@@ -44,21 +44,19 @@
     button.addEventListener('click', function(event){
       event.preventDefault();
       var text = document.getElementById("tab-num").value;
-      debugger
       if(content_hash[text] != undefined || content_hash[text] < 3 || content_hash[text] > 1){
         content.innerText = content_hash[text];
         unselect();
         selectTab(text);
       }
+      else{
+        alert('Invalid!');
+      }
     })
-
-
     function selectTab(tab_id){
-      debugger
       tabs.forEach(function(tab){
-        debugger
         if (tab.getAttribute('data') == tab_id){
-          tab.classList.add("selected");
+          return tab.classList.add("selected");
         }
       });
     }
