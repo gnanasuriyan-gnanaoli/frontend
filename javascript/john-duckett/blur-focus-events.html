@@ -9,26 +9,32 @@
     <div class="container">
       <p>Username:</p>
       <input type="text" id="username" value="">
-      <small id="error" style="display: none; background-color: red">Username should be
-      atleast 8 characters.</small>
+      <small id="feedback"></small>
       <button type="button" id="submit">Submit</button>
     </div>
     <script type="text/javascript">
       username = document.getElementById("username");
       button = document.getElementById("submit");
-      error = document.getElementById("error");
-      
-      username.addEventListener("blur", checkLength);
+      feedback = document.getElementById("feedback");
       function checkLength(){
-        if(username.value.length < 6){
+        if(username.value.length < 9){
           button.disabled = "true";
-          error.style.display="block";
+          feedback.className = "warning";
+          feedback.innerHTML = "Not long enough, yet";
+          feedback.style.display = 'block';
         }
         else{
           button.removeAttribute('disabled');
-          error.style.display="none";
+          feedback.style.display="none";
         }
       }
+      function tipUsername(){
+        feedback.className = "tip";
+        feedback.innerHTML = "User Name Must be atlesast 8 characters";
+      }
+      username.addEventListener("blur", checkLength);
+      username.addEventListener("focus", tipUsername);
+      
     </script>
   </body>
 </html>
