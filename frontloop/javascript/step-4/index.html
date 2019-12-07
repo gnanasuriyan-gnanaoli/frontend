@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+    <title>Progress navigation</title>
+    <link rel="stylesheet" href="master.css">
+</head>
+<body>
+  <!--
+      Create a progress navigation with previous/next buttons on each step and an overview of all step-actions.
+      Clicking next button on last step should bring the final screen
+      step-actions in overview should be also clickable and change current step to the one click,
+      however you shouldn't be able to skip the next step, so if you're at 1 step - you can't go directly to 3.
+  -->
+    <div class="container">
+      <div class="left">
+        <ul>
+          <li class="selected step"><span class="step-id">1</span>Choose Title</li>
+          <li class="step"><span class="step-id">2</span>Choose description</li>
+          <li class="step"><span class="step-id">3</span>Confirm data</li>
+        </ul>
+      </div>
+      <div class="right">
+        <div class="step-actions selected" data-id="1">
+          <p>Choose title content</p>
+          <button type="button" name="button" class="next">Submit title</button>
+        </div>
+        <div class="step-actions" data-id="2">
+          <p>Choose description content</p>
+          <button type="button" name="button" class="previous">Go Back</button>
+          <button type="button" name="button" class="next">Submit description</button>
+        </div>
+        <div class="step-actions" data-id="3">
+          <p>Are you happy now?</p>
+          <button type="button" name="button" class="previous">No, Go back</button>
+          <button type="button" name="button" class="next">Yes, Go ahead</button>
+        </div>
+        <div class="step-actions" data-id="4">
+          <p>Ok, we're done.</p>
+        </div>
+      </div>
+      <script type="text/javascript">
+        var steps = document.querySelectorAll(".step");
+        var steps_actions = document.querySelectorAll(".step-actions");
+        var next_steps = document.querySelectorAll(".next");
+        var previous_steps = document.querySelectorAll(".previous");
+        steps.forEach(function(step){
+          step.addEventListener('click', function(){
+            step_id = step.firstChild.textContent;
+            if(previousStepSelected(step_id)){
+              unselectAll(step_id);
+              select(step);
+              selectContent(step_id);
+            }
+          });
+        });
+        next_steps.forEach(function(step){
+          step.addEventListener('click', function(){
+            unselectAll();
+            
+            select(steps_actions[step.parentElement.getAttribute("data-id")]);
+            next_step = steps[step.parentElement.getAttribute("data-id")]
+            if (next_step != undefined){
+              select(steps[step.parentElement.getAttribute("data-id")])
+            };
+            
+            
+            // selectContent(step.firstChild.textContent);
+          });
+        });
+        previous_steps.forEach(function(step){
+          step.addEventListener('click', function(){
+            unselectAll(parseInt(step.parentElement.getAttribute('data-id'))-1);
+            select(steps[step.parentElement.getAttribute("data-id")-2]);
+            select(steps_actions[step.parentElement.getAttribute("data-id")-2]);
+          });
+        });
+        function unselectAll(step){
+          step = parseInt(step);
+          var selectedItem = document.querySelector(".right > .selected");
+          selectedItem.classList.remove('selected');
+          while(steps[step]){
+            steps[step].classList.remove('selected');
+            step++;
+          }
+        }
+        function select(item){
+          item.classList.add('selected');
+        }
+        function selectContent(data_id){
+          select(steps_actions[data_id-1]);
+        }
+        function previousStepSelected(step){
+          previousStep = steps[step-2]
+          return (previousStep == undefined) || previousStep.classList.contains("selected");
+        }
+      </script>
+    </div>
+</body>
+</html>

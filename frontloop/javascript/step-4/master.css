@@ -1,0 +1,59 @@
+body{
+  background-color: rgb(131,71,167);
+  font-family: futura, monospace;
+}
+ul{
+  list-style-type: none;
+  margin-top: 0px;
+}
+.container{
+  display: flex;
+  width: 600px;
+  margin: 100px auto;
+  background-color: white;
+  padding: 20px;
+}
+
+.left{
+  width: 50%;
+}
+.right{
+  width: 50%;
+}
+
+.step-id{
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  background-color: lightgrey;
+  color: grey;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.step{
+  color: grey;
+}
+.selected{
+  color: black;
+}
+.selected > .step-id{
+  background-color: black;
+  color: white;
+}
+
+.right > .step-actions{
+  display: none;
+}
+.right .selected{
+  display: block;
+}
+
+button{
+  padding: 10px;
+  border-radius: 2px;
+}

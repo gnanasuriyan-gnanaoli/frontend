@@ -1,0 +1,14 @@
+body{
+  background-color: rgb(68,126,180);
+}
+
+.container{
+  background-color: white;
+  width: 300px;
+  margin: 100px auto;
+  padding: 20px
+}
+input{
+  margin: 20px auto;
+  display: block;
+}

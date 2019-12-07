@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <title>Random switches</title>
+    <link rel="stylesheet" href="master.css">
+</head>
+<body>
+  <div class="container">
+    <input type="checkbox" name="">
+    <input type="checkbox" name="">
+    <input type="checkbox" name="">
+    <input type="checkbox" name="">
+    <input type="checkbox" name="">
+  </div>
+  <script type="text/javascript">
+    checkboxes = document.querySelectorAll(".container > input");
+    // alert(checkboxes.length);
+    checkboxes.forEach(function(checkbox){
+      checkbox.addEventListener('click',function(event){
+        checkbox.setAttribute("checked","true");
+        checkboxes.forEach(function(i_checkbox){
+          if(randomTrueOrFalse()){
+            i_checkbox.setAttribute("checked", "true");
+          }
+          else{
+            i_checkbox.removeAttribute("checked");
+          }
+        });
+      });
+    });
+    function randomTrueOrFalse(){
+      return Math.floor(Math.random() * 10) > 5;
+    }
+  </script>
+</body>
+</html>
