@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>User Name Validation</title>
+    <link rel="stylesheet" href="css/user-name-validation.css">
+  </head>
+  <body>
+    <div class="container">
+      <p>Username:</p>
+      <input type="text" id="username" value="">
+      <small id="error" style="display: none; background-color: red">Username should be
+      atleast 8 characters.</small>
+      <button type="button" id="submit">Submit</button>
+    </div>
+    <script type="text/javascript">
+      username = document.getElementById("username");
+      button = document.getElementById("submit");
+      error = document.getElementById("error");
+      
+      username.addEventListener("blur", checkLength);
+      function checkLength(){
+        if(username.value.length < 6){
+          button.disabled = "true";
+          error.style.display="block";
+        }
+        else{
+          button.removeAttribute('disabled');
+          error.style.display="none";
+        }
+      }
+    </script>
+  </body>
+</html>
