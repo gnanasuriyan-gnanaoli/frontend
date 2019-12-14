@@ -1,0 +1,129 @@
+body{
+  background-color: rgb(240, 207, 130);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 62.5%;
+  font-family: Roboto, sans-serif;
+}
+
+.container{
+  margin-top: 6rem;
+  width: 58.66%;
+  height: 60vh;
+  background: white;
+  display: flex;
+  font-size: 1.25rem;
+  border-radius: 3px;
+  box-shadow: 0 22px 50px rgba(14,21,47, .2), 0 8px 20px rgba(14,21,47, .2);
+}
+
+.wallets{
+  padding: 2rem 2.75rem;
+  background: rgb(242, 242, 242);
+  width: 30%;
+  overflow-y: scroll;
+  border-radius: 3px;
+
+}
+
+.title{
+  padding-top: 0rem;
+}
+#cards{
+  padding-top: 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.card{
+  margin-top: 1.25rem;
+  border: 1px rgb(200, 200, 200) solid;
+  border-radius: 3px;
+  background: white;
+}
+
+.card:hover { border: 1px solid blue; }
+
+
+.card > img{
+  width: 4rem;
+  padding: 0.5rem;
+}
+
+.card > p{
+  color: rgb(120, 120, 120);
+  font-weight: 400;
+  margin: 0rem 0.2rem;
+  font-size: 0.85rem;
+  padding: 0rem 0.3rem 0.5rem;
+}
+
+#card-no{
+  font-size: 1rem;
+}
+
+
+#transactions{
+  width: 70%;
+  padding: 2rem 2.75rem;
+}
+
+#balance{
+  margin: 1rem 0rem;
+}
+#balance-value{
+  float: right;
+  font-weight:900;
+  font-size: 1.75rem;
+}
+hr{
+  background-color: rgb(254, 255, 255);
+  color: rgb(254, 255, 255);
+}
+
+#transactions{
+  overflow-y: scroll;
+}
+
+.details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.25em;
+}
+.details > img{
+  margin: 1em;
+
+  margin-left: 0;
+  width: 5%;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+}
+
+.details > div{
+  width: 70%;
+}
+.details > .amount{
+  width: 25%;
+  text-align: right;
+  font-weight: 600;
+}
+
+.details .desc-1{
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0.1rem 0rem;
+}
+.details .desc-2{
+  font-size: 0.95rem;
+  margin: 0;
+  color: lightgray;
+}
+.debit{
+  color: purple;
+}
+.credit{
+  color: green; 
+}
