@@ -2,10 +2,45 @@
 <html>
 <head>
     <title>Show on scroll</title>
+    <link rel="stylesheet" href="master.css">
 </head>
 <body>
     <!--
         Write a script that tracks whenever elements appears on the screen and makes them visible then
     -->
+    <div class="container"></div>
+    <div class="container"></div>
+    <div class="container"></div>
+    <div class="container"></div>
+    <div class="container"></div>
+    <div class="container"></div>
+    <div class="container"></div>
+    <div class="container"></div>
+    <div class="container"></div>
+    <div class="container"></div>
+    <div class="container"></div>
+    <script type="text/javascript">
+      var containers = document.getElementsByClassName("container");
+      function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document. documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document. documentElement.clientWidth)
+        );
+      }
+      function setVisibility(){
+        for(let i = 0; i< containers.length; i++){
+          if(isElementInViewport(containers[i])){
+            containers[i].style.visibility = "visible";
+          }
+          else{
+            containers[i].style.visibility = "hidden";
+          }
+        }
+      }
+    window.onscroll = setVisibility;
+    </script>
 </body>
 </html>

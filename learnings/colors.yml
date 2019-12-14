@@ -1,7 +1,9 @@
 javascript:
-  yellow: #F0DB4F;
-  grey: #323330;
-  pink: #C92976;
+  yellow: #F0DB4F
+  gold: gold #looks like javascript yellow
+  grey: #323330
+  pink: #C92976
 background:
   blue: rgb(48, 50, 103);
+  gold: gold #looks like javascript yellow
   
