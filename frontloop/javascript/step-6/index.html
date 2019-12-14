@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <title>3d card</title>
+    <link rel="stylesheet" href="master.css">
+</head>
+<body>
+    <!--
+        Create a card which rotates in "3d" based on the mouse cursor position on the screen.
+    -->
+    <div id="container">
+      <div id="inner"></div>
+    </div>
+    <script type="text/javascript">
+      (function(){
+        var container = document.getElementById("container");
+        var inner = document.getElementById("inner");
+        //mouse
+        var mouse = {
+          _x: 0,
+          _y: 0,
+          x: 0,
+          y: 0,
+          setOrigin: function(e) {
+            this._x = e.offsetLeft + Math.floor(e.offsetWidth/2);
+            this._y = e.offsetTop + Math.floor(e.offsetHeight/2);
+          },
+          updatePosition: function(event) {
+            var e = event;
+            this.x = e.clientX - this._x;
+            this.y = (e.clientY - this._y) * -1;
+          },
+          show: function() {
+            return " (" + this.x + ", " + this.y + ")";
+          }
+        }
+        mouse.setOrigin(container);
+        mouseEnterHandler = function(event){
+          update(event);
+        }
+        mouseLeaveHandler = function(){
+          inner.style = "";
+        }
+        mouseMoveHandler = function (event) {
+          if (isTimeToUpdate()) {
+            update(event);
+          }
+        }
+        update = function(event){
+          mouse.updatePosition(event);
+          updateTransformStyle((mouse.y / inner.offsetHeight).toFixed(2), (mouse.x / inner.offsetWidth).toFixed(2));
+        }
+        updateTransformStyle = function(x, y) {
+          var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
+          inner.style.transform = style;
+          inner.style.webkitTransform = style;
+          inner.style.mozTransform = style;
+          inner.style.msTransform = style;
+          inner.style.oTransform = style;
+        }
+        var counter = 0;
+        var updateRate = 10;
+        isTimeToUpdate = function () {
+          return counter++ % updateRate === 0;
+        }
+        container.onmouseenter = mouseEnterHandler;
+        container.onmouseleave = mouseLeaveHandler;
+        container.onmousemove = mouseMoveHandler;
+      })();
+    </script>
+</body>
+</html>

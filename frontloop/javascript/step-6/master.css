@@ -1,0 +1,30 @@
+body{
+  background: rgb(48, 50, 103);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+
+#container{
+  perspective: 40px;
+}
+
+#inner{
+  width: 20em;
+  height: 18em;
+  transition: 0.5s;
+  background: white;
+  border-radius: 4px;
+
+}
+/*.container{
+  margin: 100px auto;
+  width: 30%;
+  padding-top: 30%;
+  background: white;
+  border-radius: 3px;
+}*/

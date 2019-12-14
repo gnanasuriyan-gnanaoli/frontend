@@ -1,0 +1,19 @@
+body{
+  background-color: #F0DB4F;
+  color: #323330;
+  font-size: 32px;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.container{
+  /*width: 900px;*/
+  margin: 150px;
+  text-align: center;
+}
+#word{
+  height: 50px;
+  background-color: inherit;
+  border: 0px;
+  outline: 0px;
+  font-size: inherit;
+}

@@ -19,7 +19,7 @@
       function checkLength(){
         if(username.value.length < 9){
           button.disabled = "true";
-          feedback.className = "warning";
+          feedback.className = "error";
           feedback.innerHTML = "Not long enough, yet";
           feedback.style.display = 'block';
         }
@@ -29,12 +29,23 @@
         }
       }
       function tipUsername(){
-        feedback.className = "tip";
-        feedback.innerHTML = "User Name Must be atlesast 8 characters";
+        // feedback.className = "tip";
+        // feedback.innerHTML = "User Name Must be atleast 8 characters";
+      }
+      function getRemainingLetters(){
+        feedback.style.display = 'block';
+        if(username.value.length < 8){
+          feedback.innerHTML = (8 - username.value.length)+" "+"characters more";
+          feedback.className = "warning";
+        }
+        else{
+          feedback.innerHTML = 'Good to Go!';
+          feedback.className = "good";
+        }
       }
       username.addEventListener("blur", checkLength);
-      username.addEventListener("focus", tipUsername);
-      
+      // username.addEventListener("focus", tipUsername);
+      username.addEventListener("input", getRemainingLetters);
     </script>
   </body>
 </html>

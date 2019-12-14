@@ -11,6 +11,7 @@ body{
 #username{
   width: 97.9999%;
   height: 20px;
+  font-family: futura, monospace;
 }
 
 #submit{
@@ -20,11 +21,17 @@ body{
   display: block;
 }
 
-.warning{
+.error{
   background-color: red;
   display: block;
 }
-.tip{
+.warning{
   background-color: yellow;
+  color: purple;
+  display: block;
+}
+.good{
+  background-color: none;
+  color: black;
   display: block;
 }

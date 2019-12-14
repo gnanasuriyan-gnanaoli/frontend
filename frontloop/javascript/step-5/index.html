@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Auto type</title>
+    <link rel="stylesheet" href="master.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
     <!--
@@ -9,5 +11,41 @@
         After each word is typed - there should be a pause, before starting typing the next one.
         All the words variants should be set in the javascript code.
     -->
+    <div class="container">
+      <!-- <p>We can help you with <span><input id="word" type="text" name="" value=""></span></p> -->
+      <p>We can help you with <span id="word"></span></p>
+
+    </div>
+    
+    <script type="text/javascript">
+    function printIt(){
+      
+    
+    words = ["design", "frontend", "backend", "testing"];
+    var i = 0;
+    var j=0;
+    var word = "";
+    // while(i < words.length)
+    {
+      document.getElementById('word').innerHTML = "";
+      j = 0;
+      debugger
+      word = words[i];
+      printEach();
+      
+      i = i+1;
+    }
+    function printEach(){
+      if(j < word.length){
+        document.getElementById('word').innerHTML += word[j];
+        console.log(document.getElementById('word').innerHTML);
+        j++;
+        setTimeout(printEach, 1000);
+      }
+    }
+  }
+  printIt();
+
+  </script>
 </body>
 </html>

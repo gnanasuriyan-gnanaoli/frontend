@@ -2,6 +2,13 @@ body{
   background-color: rgb(246, 235, 233);
 }
 
+h1{
+  margin: 0px;
+  font-weight: 500;
+  width:75%;
+  font-family: "Playfair Display";
+  font-size: 56px;
+}
 .container{
   margin: 40px auto;
   width: 950px;
@@ -10,4 +17,51 @@ body{
 }
 .background{
   width: 35%;
+}
+.right{
+  width: 65%;
+}
+
+.preview{
+  width: 170px;
+  height: 110px;
+}
+
+.title, .subtext{
+  display: flex;
+}
+
+.subtext{
+  justify-content: space-between;
+}
+
+.subtext > div, .subtext > p{
+  width: 45%;
+}
+
+.title{
+  position: relative;
+}
+.title > hr{
+  position: absolute;
+  bottom: 20px;
+  right: 0px;
+  display: inline-block;
+  width: 100px;
+  height: 4px;
+  border: none;
+  background: #000;
+}
+.countries{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.countries > div{
+  margin-right: 20px;
+}
+.details{
+  margin: 100px;
 }
