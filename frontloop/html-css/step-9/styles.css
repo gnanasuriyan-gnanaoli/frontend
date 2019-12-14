@@ -34,6 +34,7 @@ body{
 #cards{
   padding-top: 0rem;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
 }
@@ -64,10 +65,10 @@ body{
   font-size: 1rem;
 }
 
-
 #transactions{
   width: 70%;
   padding: 2rem 2.75rem;
+  overflow-y: scroll;
 }
 
 #balance{
@@ -83,30 +84,26 @@ hr{
   color: rgb(254, 255, 255);
 }
 
-#transactions{
-  overflow-y: scroll;
-}
-
 .details{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-top: 1.25em;
 }
 .details > img{
+  width: 4%;
   margin: 1em;
-
   margin-left: 0;
-  width: 5%;
   border: 1px solid lightgray;
   border-radius: 50%;
 }
 
 .details > div{
-  width: 70%;
+  flex-grow: 5;
 }
 .details > .amount{
-  width: 25%;
+  flex-grow: 1;
   text-align: right;
   font-weight: 600;
 }
