@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>multiple-borders</title>
+    <style media="screen">
+    body{
+      background: gold;
+      background: deeppink;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      /*text-align: center;*/
+      height: 100vh;
+    }
+    .container{
+      width: 300px;
+      height: 300px;
+      border: 2px solid black;
+      background: white;
+      margin: auto;
+    }
+    .container > div{
+      line-height: 300px;
+      vertical-align: middle;
+      text-align: center;
+    }
+    #box-shadow{
+      box-shadow: 0 0 0 2px gold,
+                  0 0 0 4px brown,
+                  0 0 0 6px white,
+                  0 0 0 8px deeppink,
+                  0 0 0 10px gold,
+                  0 0 0 12px darkviolet;
+    }
+    #outline{
+      outline: 2px solid gold;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="box-shadow">
+      <div>Multiple Borders Using Box Shadow</div>
+    </div>
+    <div class="container" id="outline">
+      <div>Multiple Borders Using Outline</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>multiple-borders</title>
+    <style media="screen">
+    body{
+      background: gold;
+      background: deeppink;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /*height: 100%;*/
+    }
+    .container{
+      width: 40vh;
+      height: 40vh;
+      border: 1px solid black;
+      background: white;
+      margin: auto;
+    }
+    #vertical-align{
+      line-height: 40vh;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    #calculation{
+      margin: 20vh auto;
+      text-align: center;
+    }
+    .make-flex{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="vertical-align">LineHeigh & vertical-align</div>
+    </div>
+    <div class="container">
+      <div id="calculation">Calculation</div>
+    </div>
+    <div class="container make-flex">
+      <div>Center Using Flex</div>
+    </div>
+  </body>
+</html>

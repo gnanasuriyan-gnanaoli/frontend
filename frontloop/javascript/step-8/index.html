@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <title>Side menu</title>
+    <link rel="stylesheet" href="master.css">
+</head>
+<body>
+    <!--
+        Build a card with two buttons. Each button opens a linked side menu with content and close button.
+        Clicking the close button or outside the side menu, should close it.
+    -->
+    <div id="container">
+      <button type="button" id="search">Search</button>
+      <button type="button" id="run">run</button>
+    </div>
+    <div id="overlay" class="hide"></div>
+    <aside id="side">
+      <div id="search-options">
+        <p>Whoa! You found me!</p>
+        <button type="button" name="hide" id="hide-back">Hide back</button>
+      </div>
+      <div id="run-options">
+        <p>Please don't run</p>
+        <button type="button" name="close" id="close-pane">Close</button>
+      </div>
+    </aside>
+    
+    <script type="text/javascript">
+      (function(){
+        var aside = document.getElementById("side");
+        var searchButton = document.getElementById("search");
+        var runButton = document.getElementById("run");
+        var searchOptions = document.getElementById("search-options");
+        var runOptions = document.getElementById("run-options");
+        var overlay = document.getElementById("overlay");
+        var hideBack = document.getElementById("hide-back");
+        var closePane = document.getElementById("close-pane");
+        showSide = function() {
+          overlay.classList.remove("hide");
+          aside.style.transform = "translate(0%)";
+          aside.style.transform = "rotateY(0deg)";
+        }
+        hideSide = function() {
+          overlay.classList.add("hide");
+          aside.style.transform = "translate(-120%)";
+          // aside.style.transform = "rotateY(-90deg)";
+        }
+        searchAction = function(){
+          showSide();
+          searchOptions.classList.remove("hide");
+          runOptions.classList.add("hide");
+        }
+        runAction = function(){
+          showSide();
+          searchOptions.classList.add("hide");
+          runOptions.classList.remove("hide");
+        }
+        searchButton.addEventListener('click', searchAction);
+        runButton.addEventListener('click', runAction);
+        [overlay, hideBack, closePane].forEach(function(item){
+          item.addEventListener('click', hideSide);
+        })
+      })();
+    </script>
+</body>
+</html>
