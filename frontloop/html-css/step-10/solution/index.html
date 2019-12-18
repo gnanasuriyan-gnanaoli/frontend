@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    html {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    *,
+    *::before,
+    *::after {
+      -webkit-box-sizing: inherit;
+      -moz-box-sizing: inherit;
+      box-sizing: inherit;
+    }
+
+    .cf::before,
+    .cf::after {
+      content: '';
+      display: table;
+    }
+
+    .cf::after {
+      clear: both;
+    }
+
+    body {
+      color: #999;
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
+
+    .container {
+      max-width: 900px;
+      padding: 0 15px;
+      margin: 0 auto;
+    }
+
+    .site-header {
+      text-align: center;
+    }
+
+    .site-header__left {
+      float: left;
+    }
+
+    .site-header__right {
+      float: right;
+    }
+
+    .site-header__left,
+    .site-header__right {
+      width: 100%;
+    }
+
+    .site-header__logo {
+      display: inline-block;
+    }
+
+    .site-header__logo-img {
+      width: 35px;
+    }
+
+    @media only screen and (min-width: 600px) {
+      .site-header__right {
+        text-align: left;
+      }
+    }
+
+    @media only screen and (min-width: 730px) {
+      .site-header {
+        padding: 20px 0;
+      }
+
+      .site-header__left,
+      .site-header__right {
+        width: auto;
+      }
+
+      .site-header__right {
+        padding: 25px 0;
+      }
+    }
+
+    .sitenav__menu {
+      padding: 0;
+      margin: 0 0 10px;
+      list-style-type: none;
+    }
+
+    .sitenav__menu-item {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .sitenav__menu-link {
+      display: inline-block;
+      padding-bottom: 8px;
+      border-bottom: 2px solid transparent;
+      color: #999;
+      text-decoration: none;
+      transition: border .4s ease,
+        color .4s ease;
+    }
+
+    .sitenav__menu-link:hover {
+      border-bottom-color: #333;
+      color: #333;
+    }
+
+    @media only screen and (min-width: 600px) {
+      .sitenav {
+        float: left;
+      }
+
+      .sitenav__menu-link {
+        padding: 5px 0 10px;
+      }
+    }
+
+    @media only screen and (min-width: 730px) {
+      .sitenav__menu {
+        margin: 0;
+      }
+
+      .sitenav__menu-item {
+        margin: 0 40px 0 0;
+      }
+    }
+
+    .search-form__input {
+      width: 100%;
+      padding: 5px;
+      border: none;
+      border-bottom: 1px solid #333;
+      outline: none;
+    }
+
+    @media only screen and (min-width: 600px) {
+      .search-form {
+        float: right;
+      }
+
+      .search-form__input {
+        width: auto;
+      }
+    }
+
+    .watch-promo {
+      position: relative;
+      overflow: hidden;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    .watch-promo__img {
+      width: 75%;
+      margin-bottom: 20px;
+      transition: all .4s ease;
+    }
+
+    @media only screen and (min-width: 600px) {
+      .watch-promo__img {
+        width: 60%;
+      }
+    }
+
+    @media only screen and (min-width: 770px) {
+      .watch-promo {
+        padding: 100px 0 200px;
+      }
+
+      .watch-promo__img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: auto;
+        max-width: 70%;
+        height: 100%;
+        margin-bottom: 0;
+        transform: translateX(35%);
+      }
+    }
+
+    .feature--left,
+    .feature--right {
+      float: none;
+    }
+
+    .feature__title {
+      color: #333;
+      font-size: 1.8rem;
+    }
+
+    .feature__text {
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    @media only screen and (min-width: 770px) {
+      .feature {
+        width: 50%;
+        text-align: left;
+      }
+
+      .feature--left {
+        float: left;
+      }
+
+      .feature--right {
+        float: right;
+      }
+
+      .feature__title {
+        margin-bottom: 40px;
+      }
+
+      .feature__text {
+        padding-left: 30px;
+        border-left: 2px solid #999;
+        margin-bottom: 30px;
+      }
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px;
+      font-weight: bold;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: background-color .4s ease;
+    }
+
+    .button--red {
+      color: #fff;
+      background-color: hsl(3, 61%, 60%);
+    }
+
+    .button--red:hover {
+      background-color: hsl(3, 61%, 50%);
+    }
+
+    @media only screen and (min-width: 770px) {
+      .button {
+        padding: 15px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ================================
+    		SITE-HEADER
+    	================================== -->
+  <header class="site-header">
+    <div class="container cf">
+      <div class="site-header__left">
+        <a href="#" class="site-header__logo">
+            <img src="img/logo.svg" alt="Apple Logo icon" class="site-header__logo-img">
+          </a>
+      </div><!-- /.site-header__left -->
+
+      <div class="site-header__right cf">
+        <nav class="sitenav">
+          <ul class="sitenav__menu">
+            <li class="sitenav__menu-item">
+              <a href="#" class="sitenav__menu-link">About</a>
+            </li><!-- /.sitenav__menu-item -->
+            <li class="sitenav__menu-item">
+              <a href="#" class="sitenav__menu-link">Offers</a>
+            </li><!-- /.sitenav__menu-item -->
+            <li class="sitenav__menu-item">
+              <a href="#" class="sitenav__menu-link">Services</a>
+            </li><!-- /.sitenav__menu-item -->
+          </ul><!-- /.sitenav__menu -->
+        </nav><!-- /.sitenav -->
+
+        <form class="search-form">
+          <input type="search" class="search-form__input" placeholder="How can we help you?" required>
+          </form><!-- /.search-form -->
+      </div><!-- /.site-header__right -->
+    </div><!-- /.container -->
+  </header><!-- /.site-header -->
+
+
+  <!-- ================================
+      WATCH-PROMO
+    ================================== -->
+  <section class="watch-promo">
+    <div class="container cf">
+      <img src="https://gnanasuriyan-gnanaoli.github.io/frontloop/html-css/step-10/img/watches.jpg" alt="Apple Watch with red band" class="watch-promo__img">
+
+      <div class="feature feature--left">
+        <h2 class="feature__title">Freedom calls.</h2><!-- /.feature__title -->
+        <div class="feature__text">Answer a call from your surfboard. Ask Siri to send a message. Stream your favorite songs on your run. And do it all while leaving your phone behind. Introducing Apple Watch Series 3 with cellular. Now you have the
+          freedom to go with just your watch.</div><!-- /.feature__text -->
+        <a href="#" class="button button--red">WATCH THE KEYNOTE</a>
+      </div><!-- /.feature -->
+    </div><!-- /.container -->
+  </section><!-- /.watch-promo -->
+</body>
+
+</html>

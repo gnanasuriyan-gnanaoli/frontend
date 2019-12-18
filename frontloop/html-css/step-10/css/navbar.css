@@ -1,0 +1,29 @@
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav > .logo{
+  flex-grow: 14;
+
+}
+#apple-logo{
+  width: 6rem;
+  height: 6rem;
+}
+
+nav > a, input{
+  flex-grow: 1;
+  text-decoration: none;
+  color: gray;
+}
+
+nav > input{
+  flex-grow: 1;
+  border: 0;
+  border-bottom: 1px solid lightgray;
+  outline: 0;
+  width: 11rem;
+  padding: 2px;
+  font-size: inherit;
+}

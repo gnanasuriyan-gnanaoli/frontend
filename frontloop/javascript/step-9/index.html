@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <title>Sticky</title>
+    <link rel="stylesheet" href="master.css">
+</head>
+<body>
+    <!--
+        Write a script that works almost like position: sticky in css.
+        Whenever you scroll and element is about to get off the screen - it should stick to the top and follow the scroll.
+    -->
+    <div id="small-object" class="sticky one"></div>
+    <div id="big-object"></div>
+    <script type="text/javascript">
+      (function(){
+        'use strict';
+        var smallObject = document.getElementById('small-object');
+        var counter = 0;
+        var updateRate = 1;
+        window.addEventListener('scroll', setStickyPosition);
+        function setStickyPosition() {
+          if(updateRequired()){
+            smallObject.style.top = window.pageYOffset+"px";  
+          }
+        }
+        function updateRequired() {
+          return (counter++ % updateRate  == 0 )
+        }
+      })();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
