@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Code</title>
+    <link rel="stylesheet" href="master.css">
 </head>
 <body>
     <!--
@@ -11,5 +12,97 @@
         Deleting a value should delete the last filled value.
         Submitting the form should alert the submitted code.
     -->
+    <div id="container">
+      <p>Enter code:</p>
+      <div id="input">
+        <input type="text" data-id="0" maxlength="1" autofocus></input>
+        <input type="text" data-id="1" maxlength="1"></input>
+        <input type="text" data-id="2" maxlength="1"></input>
+        <span id="dash" maxlength="1">-</span>
+        <input type="text" data-id="3" maxlength="1"></input>
+        <input type="text" data-id="4" maxlength="1"></input>
+        <input type="text" data-id="5" maxlength="1"></input><br>
+      </div>
+      <button type="button" name="button" id="submit">Submit</button>
+    </div>
+
+    <script type="text/javascript">
+      (function() {
+        'use strict';
+        var inputs = document.querySelectorAll("#input > input");
+        var submit = document.getElementById("submit");
+        var textBoxes = {
+          focusNext: function(event){
+            if(event.key !== "Backspace"){
+              textBoxes.handleInput(event);
+            }
+          },
+          focusPrev: function(event){
+            if(event.key === "Backspace"){
+              textBoxes.handleBackspace(event);
+            }
+          },
+          handleInput: function(event) {
+            if(inputs[textBoxes.currentDataId(event)+1] !== undefined)
+              inputs[textBoxes.currentDataId(event)+1].focus();
+          },
+          handleBackspace: function(event){
+            event.target.value="";
+            if(inputs[textBoxes.currentDataId(event)-1] !== undefined)
+              inputs[textBoxes.currentDataId(event)-1].focus();
+          },
+          submit: function(event){
+            var output = "";
+            for(let i = 0; i<inputs.length; i++){
+              output = output + inputs[i].value;
+            }
+            alert(output.toUpperCase());
+          },
+          checkClick: function(event){
+            if((textBoxes.previousInput(event) !== undefined && textBoxes.previousInput(event).value === "")
+               || event.target.value !== ""){
+              event.preventDefault();
+            }
+          },
+          currentDataId: function(event){
+            return parseInt(event.target.getAttribute('data-id'));
+          },
+          previousInput: function(event){
+            return inputs[textBoxes.currentDataId(event)-1];
+          }
+        }
+        for(let i = 0; i < inputs.length; i++){
+          inputs[i].addEventListener('keypress', textBoxes.focusNext);
+          inputs[i].addEventListener('keydown', textBoxes.focusPrev);
+          inputs[i].addEventListener('mousedown', textBoxes.checkClick);
+        }
+        submit.addEventListener('click', textBoxes.submit);
+      }());
+    </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+body{
+  font-family: futura;
+  background: rgb(181, 78, 103);
+  height: 100vh;
+  font-size: 62.5%;
+}
+
+#container{
+  font-size: 1.2rem;
+  max-width: 30%;
+  margin: 12rem auto;
+  background: white;
+  text-align: center;
+  padding: 1vh;
+  border-radius: 4px;
+}
+#container > p{
+  margin: 1rem;
+}
+
+#input > input{
+  text-transform: uppercase;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+button{
+  margin: 1rem;
+  font-size: 1.2rem;
+  padding: 0.3rem 1.4rem;
+}
