@@ -1,0 +1,18 @@
+body{
+  background: dimgrey;
+  font-family: futura;
+}
+
+#card{
+  top: calc(50vh - 200px) ;
+  left: 50%;
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background: gold;
+  /*background: deeppink;
+  color: white;*/
+  box-shadow: 3px 3px 12px black;
+  text-align: center;
+  line-height: 250px;
+}

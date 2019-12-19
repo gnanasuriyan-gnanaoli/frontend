@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <title>Draggable card</title>
+    <link rel="stylesheet" href="master.css">
+</head>
+<body>
+    <div id="card" draggable="true">
+      Drag Me!!!
+    </div>
+    <script type="text/javascript">
+      (
+        function() {
+        'use strict';
+        var card = document.getElementById('card');
+        var startX, startY;
+        document.addEventListener('dragstart', moveCard, false);
+        document.addEventListener('dragend', dropCard, false);
+        function moveCard(event) {
+          startX = event.clientX - event.target.offsetLeft;
+          startY = event.clientY - event.target.offsetTop;
+        }
+        function dropCard(event) {
+          // debugger
+          console.log(startX+" "+startY+" "+event.clientX+" "+event.clientY)
+          event.target.style.top = (event.clientY - startY - 8)+"px";
+          event.target.style.left = (event.clientX - startX -8)+"px";
+        }
+      }());
+    </script>
+</body>
+</html>
