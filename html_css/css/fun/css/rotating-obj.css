@@ -1,0 +1,27 @@
+body{
+  width: 100%;
+  background: black;
+}
+.rect{
+  margin: 140px auto;
+  width: 240px;
+  height: 120px;
+  background: gold;
+  animation: rot 3s linear infinite;
+}
+
+@keyframes rot {
+  /*from {
+    transform: rotateZ(0deg);
+    margin: 240px;
+  }
+  to {
+    transform: rotateZ(180deg);
+    margin: 0px;
+  }*/
+   0%   {transform: rotateZ(0deg);}
+   25%  {transform: rotateZ(45deg);}
+   50%  {transform: rotateZ(90deg);}
+   75%  {transform: rotateZ(135deg);}
+   100% {transform: rotateZ(180deg);}
+}
