@@ -1,0 +1,21 @@
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-family: helvetica, sans-serif;
+  width: 100%;
+}
+.container{
+  margin: 10rem auto;
+  border: 0.1rem solid deeppink;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.container > img, .details{
+  padding: 1rem;
+  width: 50%;
+}

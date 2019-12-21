@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>handlebars</title>
+    <script type="text/javascript" src="../libraries/handlebars/handlebars-v4.5.3.js"></script>
+  </head>
+  <body>
+    <div id="greeting"></div>
+    <script type="text/javascript">
+      var compiled = Handlebars.compile("<p>Hello {{name}}</p>");
+      var data = compiled({name: "Surya"});
+      document.getElementById('greeting').innerHTML += data;
+    </script>
+  </body>
+</html>

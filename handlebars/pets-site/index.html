@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pets</title>
+    <link rel="stylesheet" href="master.css">
+    <script type="text/javascript" src="../../libraries/handlebars/handlebars-v4.5.3.js"></script>
+  </head>
+  <body>
+    <!-- <div class="container">
+      <img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg" alt="randoo">
+      <div class="details">
+        <dl>
+          <dt>Name:</dt><dd>Mandoo</dd>
+          <dt>Age:</dt><dd>12</dd>
+          <dt>Type:</dt><dd>cat</dd>
+        </dl>
+      </div>
+    </div> -->
+    <script id='pets-template'type="text/x-handlebars-template">
+      {{#each this}}
+        <div class="container">
+          <img src="{{url}}" alt="{{name}}">
+          <div class="details">
+            <dl>
+              <dt>Name:</dt><dd>{{name}}</dd>
+              <dt>Age:</dt><dd>{{age}}</dd>
+              <dt>Type:</dt><dd>{{type}}</dd>
+            </dl>
+          </div>
+        </div>
+      {{/each}}
+    </script>
+    <script type="text/javascript">
+      xhttp = new XMLHttpRequest();
+      xhttp.open("GET", "https://gnanasuriyan-gnanaoli.github.io/sample/json/pets.json")
+      xhttp.send();
+      xhttp.onload = function(){
+        appendData(JSON.parse(xhttp.responseText));
+      }
+      function appendData(pets){
+        var compiled = Handlebars.compile(document.getElementById('pets-template').innerHTML);
+        document.body.innerHTML += compiled(pets);
+      }
+    </script>
+  </body>
+</html>
