@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+    <title>Multiselect</title>
+    <link rel="stylesheet" href="master.css">
+</head>
+<body>
+    <!--
+        Build a multiselect with a list of options and Check all button.
+        Clicking on option toggles its checked state and update the display for selected values.
+        If all of the options were selected by clicking them - Check all button should also get checked.
+        Display element should display first two checked elements from the list and collapse all others (and x more)
+    -->
+    <div class="container">
+      <p id="selected-text">Nothing Selected</p>
+      <hr>
+      <ul class="food">
+        <li class="all-checker">Check all</li>
+        <li>Ice-cream</li>
+        <li>Hot dog</li>
+        <li>Popcorn</li>
+        <li>Cookie</li>
+      </ul>
+    </div>
+    <script type="text/javascript">
+      'use strict';
+      var food = document.querySelectorAll("li");
+      function map(arr, callback){
+        for(let i = 0; i < arr.length; i++){
+          callback(arr[i]);
+        }
+      }
+      map(food, function(selected_food){
+        selected_food.addEventListener('click', toggleFood);
+      })
+      function toggleFood(event) {
+        if(event.target.classList.contains("all-checker"))
+          return toggleAll(event);
+        if(event.target.classList.contains("selected"))
+          event.target.classList.remove("selected");
+        else
+          event.target.classList.add("selected");
+      }
+      function toggleAll(event){
+        debugger
+        if(document.querySelectorAll(".selected").length === food.length)
+          unCheckAll(event);
+        else
+          checkAll(event);
+      }
+      function checkAll(event) {
+        map(food, function(selected_food){
+          selected_food.classList.add("selected");
+        })
+      }
+      function unCheckAll(event) {
+        map(food, function(selected_food){
+          selected_food.classList.remove("selected");
+        })
+      }
+      function constructSelected(value){
+        let sliced = selectedArray.slice(0, 2)
+      }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
