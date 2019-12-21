@@ -1,16 +1,26 @@
 [{
   "name": "Randoo",
-  "age": 12,
+  "age": 3,
   "type": "cat",
   "url": "https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg"
 }, {
   "name": "Mandoo",
-  "age": 12,
+  "age": 2,
   "type": "dog",
   "url": "https://images.pexels.com/photos/33053/dog-young-dog-small-dog-maltese.jpg"
 }, {
   "name": "Sandoo",
-  "age": 2,
+  "age": 4,
   "type": "pig",
   "url": "https://images.pexels.com/photos/3178268/pexels-photo-3178268.jpeg"
+}, {
+  "name": "Pentoo",
+  "age": 6,
+  "type": "pig",
+  "url": "https://images.pexels.com/photos/86405/penguin-funny-blue-water-86405.jpeg"
+}, {
+  "name": "Pandoo",
+  "age": 8,
+  "type": "pig",
+  "url": "https://images.unsplash.com/photo-1527118732049-c88155f2107c"
 }]
