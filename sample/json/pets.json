@@ -1,13 +1,16 @@
 [{
   "name": "Randoo",
   "age": 12,
-  "type": "cat"
+  "type": "cat",
+  "url": "https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg"
 }, {
   "name": "Mandoo",
   "age": 12,
-  "type": "dog"
+  "type": "dog",
+  "url": "https://images.pexels.com/photos/33053/dog-young-dog-small-dog-maltese.jpg"
 }, {
   "name": "Sandoo",
   "age": 2,
-  "type": "pig"
+  "type": "pig",
+  "url": "https://images.pexels.com/photos/3178268/pexels-photo-3178268.jpeg"
 }]
