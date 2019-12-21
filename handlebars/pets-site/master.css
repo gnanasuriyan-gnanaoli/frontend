@@ -3,16 +3,19 @@ html{
 }
 
 body{
-  font-family: helvetica, sans-serif;
+  font-family: 'Futura', sans-serif;
   width: 100%;
+  font-size: 2rem;
 }
 .container{
+  box-shadow: 0.3rem 0.3rem 0.3rem deeppink;
   margin: 10rem auto;
-  border: 0.1rem solid deeppink;
-  width: 80%;
+  width: 50%;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  background: white;
+  color: black;
 }
 
 .container > img, .details{

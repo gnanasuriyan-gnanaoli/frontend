@@ -7,28 +7,15 @@
     <script type="text/javascript" src="../../libraries/handlebars/handlebars-v4.5.3.js"></script>
   </head>
   <body>
-    <!-- <div class="container">
-      <img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg" alt="randoo">
-      <div class="details">
-        <dl>
-          <dt>Name:</dt><dd>Mandoo</dd>
-          <dt>Age:</dt><dd>12</dd>
-          <dt>Type:</dt><dd>cat</dd>
-        </dl>
-      </div>
-    </div> -->
     <script id='pets-template'type="text/x-handlebars-template">
       {{#each this}}
-        <div class="container">
+        <section class="container">
           <img src="{{url}}" alt="{{name}}">
-          <div class="details">
-            <dl>
-              <dt>Name:</dt><dd>{{name}}</dd>
-              <dt>Age:</dt><dd>{{age}}</dd>
-              <dt>Type:</dt><dd>{{type}}</dd>
-            </dl>
-          </div>
-        </div>
+          <article class="details">
+           <p>{{name}} | Age: {{age}} | {{type}}</p>
+           <p>{{description}}</p>
+         </article>
+        </section>
       {{/each}}
     </script>
     <script type="text/javascript">
