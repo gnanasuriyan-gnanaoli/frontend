@@ -1,0 +1,14 @@
+{
+   "name": "Surya's Night Mode",
+   "version": "1.0",
+   "description": "Build an Extension!",
+   "manifest_version": 2,
+   "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["night-mode.js"]
+    }
+  ]
+ }
