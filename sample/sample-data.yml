@@ -1,0 +1,16 @@
+colors:
+  javascript:
+    yellow: #F0DB4F gold
+    grey: #323330
+    pink: #C92976 deeppink
+    
+  background:
+    blue: rgb(48, 50, 103);
+    gold: gold #looks like javascript yellow
+    deeppink:
+fonts:
+  sans-serif:
+    "Oswald"
+    "Roboto"
+  monospace:
+    "futura"
