@@ -1,15 +1,13 @@
 [{
-  name: 'Randoo',
-  age: 12,
-  type: 'cat'
-},
-{
-  name: 'Mandoo',
-  age: 12,
-  type: 'dog'
-},
-{
-  name: 'Sandoo',
-  age: 2,
-  type: 'pig'
+  "name": "Randoo",
+  "age": 12,
+  "type": "cat"
+}, {
+  "name": "Mandoo",
+  "age": 12,
+  "type": "dog"
+}, {
+  "name": "Sandoo",
+  "age": 2,
+  "type": "pig"
 }]
