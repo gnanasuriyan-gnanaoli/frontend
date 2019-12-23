@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>toggle-button</title>
+    <style media="screen">
+      body{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+      #ball{
+        transition: 0.3s;
+        margin: 5px;
+        border-radius: 50%;
+        background-color: white;
+        width: 30px;
+        height: 30px;
+        position: relative;
+      }
+      #toggle{
+        border-radius: 25% / 50%;
+        width: 70px;
+      }
+      .on{
+        background: deeppink;
+      }
+      .on > #ball{
+        left: 30px;
+      }
+      .off{
+        background: grey;
+      }
+      .off > #ball{
+        left: 0px;
+      }
+      #checky{
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="toggle" class='off'>
+      <div id="ball"></div>
+    </div>
+    <input id='checky' type="checkbox" name="" value="">
+    <script type="text/javascript">
+      var toggle = document.getElementById('toggle');
+      var checky = document.getElementById('checky');
+      toggle.addEventListener('click', toggleBall);
+      function toggleBall(event) {
+        if(toggle.classList.contains('on')){
+          toggle.classList.remove('on');
+          toggle.classList.add('off');
+        }
+        else{
+          toggle.classList.remove('off');
+          toggle.classList.add('on');
+        }
+        checky.click();
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
