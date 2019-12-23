@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>parallelogram</title>
+    <style media="screen">
+      .container{
+        padding: 10px;
+        margin: 20px auto;
+        width: 12%;
+        text-align: center;
+        color: white;
+        background: deeppink;
+      }
+      .skew{
+        transform: skewX(-45deg);
+      }
+      .skew-sol{
+        transform: skewX(45deg);
+      }
+      .pseudo {
+        width: 12%;
+        position: relative;
+        color: white;
+        padding: 10px;
+        margin: 20px auto;
+      }
+      .pseudo::before {
+        content: ''; /* To generate the box */
+        position: absolute;
+
+
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        background: deeppink;
+        transform: skew(-45deg);
+      }
+      #test1{
+        width: 300px;
+        height: 150px;
+        border-radius: 30% 30% 30% 0 / 50% 50% 50% 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="test1">
+      Related Specs
+    </div>
+    <div class="container skew">Skew</div>
+    <div class="container skew"><div class="skew-sol">Skew Solution</div></div>
+    <div class=" pseudo">Pseudo Element Solution</div>
+  </body>
+</html>

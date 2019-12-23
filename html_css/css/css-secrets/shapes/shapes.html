@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>larger than 100 px radius</title>
+    <style media="screen">
+      body{
+        font-family: helvetica;
+      }
+      .container{
+        width: 300px;
+        height: 150px;
+        margin: 20px auto;
+        color: white;
+        text-transform: uppercase;
+        background: #fb3;
+        text-align: center;
+        line-height: 150px;
+      }
+      .semi{
+        width: 300px;
+        height: 150px;
+        border-radius: 50% 50% 0% 0%/ 100% 100% 0 0;
+      }
+      .semi-ellipse-horizontal-cut{
+        width: 300px;
+        height: 150px;
+        background: purple;
+        border-radius: 100% 0 0 100%/ 50% 0 0 50%;
+      }
+      .freshservice{
+        background: rgb(109, 199, 234);
+        width: 150px;
+        height: 150px;
+        border-radius: 50% 13% 50% 50%/ 50% 13% 50% 50%;
+      }
+      .quarter-ellipse{
+        width: 150px;
+        height: 150px;
+        background: deeppink;
+        border-radius:  100% 0% 0% 0%;
+      }
+      .rect{
+        background: maroon;
+      }
+      .square{
+        width: 150px;
+        line-height: 150px;
+        background: black;
+      }
+      .triangle{
+        background: white;
+        width: 0;
+        height: 0;
+        border-top: 150px solid red;
+        border-right: 150px solid transparent;
+        /*width: 0;
+        height: 0;
+        border-top: 100px solid red;
+        border-right: 100px solid transparent;*/
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container rect">Rectangle</div>
+
+    <div class="container semi">Semi Ellipse</div>
+    <div class="container semi-ellipse-horizontal-cut">Semi Ellipse Horizontal</div>
+    <div class="container freshservice">freshservice</div>
+    <div class="container quarter-ellipse">Quarter</div>
+    <div class="container square">Square</div>
+    <div class="container triangle"></div>
+    </div>
+  </body>
+</html>
