@@ -15,7 +15,7 @@ class AllLinksBuilder
   def html
     html = "<ul>\n"
     Find.find(@dir) do |path|
-      next unless path =~ /html\Z|md\Z/
+      next unless path =~ /\.html\Z|md\Z/
       href = path.gsub("#{@dir}/", '')
       name = href.split('/').last
       puts href
