@@ -7,6 +7,13 @@
       body{
         font-family: helvetica;
       }
+      .circles, .ellipses{
+        margin: auto;
+        max-width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
       .container{
         width: 300px;
         height: 150px;
@@ -17,15 +24,33 @@
         text-align: center;
         line-height: 150px;
       }
-      .semi{
-        width: 300px;
-        height: 150px;
+      .circle{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+      .semi-circle{
+        background: indigo;
+        width: 200px;
+        height: 100px;
         border-radius: 50% 50% 0% 0%/ 100% 100% 0 0;
       }
-      .semi-ellipse-horizontal-cut{
+      .ellipse{
         width: 300px;
         height: 150px;
+        background: red;
+        border-radius: 50%;
+      }
+      .semi-ellipse{
+        width: 150px;
+        height: 150px;
         background: purple;
+        border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+      }
+      .semi-ellipse-horizontal-cut{
+        width: 150px;
+        height: 150px;
+        background: olive;
         border-radius: 100% 0 0 100%/ 50% 0 0 50%;
       }
       .freshservice{
@@ -34,14 +59,14 @@
         height: 150px;
         border-radius: 50% 13% 50% 50%/ 50% 13% 50% 50%;
       }
-      .quarter-ellipse{
+      .quarter{
         width: 150px;
         height: 150px;
         background: deeppink;
         border-radius:  100% 0% 0% 0%;
       }
       .rect{
-        background: maroon;
+        background: orangered;
       }
       .square{
         width: 150px;
@@ -63,13 +88,19 @@
   </head>
   <body>
     <div class="container rect">Rectangle</div>
-
-    <div class="container semi">Semi Ellipse</div>
-    <div class="container semi-ellipse-horizontal-cut">Semi Ellipse Horizontal</div>
+    <div class="circles">
+      <div class="container circle">Circle</div>
+      <div class="container semi-circle">Semi Circle</div>
+      <div class="container quarter">Quarter</div>
+    </div>
+    <div class="ellipses">
+      <div class="container ellipse">Ellipse</div>
+      <div class="container semi-ellipse">Semi Ellipse</div>
+      <div class="container semi-ellipse-horizontal-cut">Semi Ellipse Horizontal</div>
+    </div>
     <div class="container freshservice">freshservice</div>
-    <div class="container quarter-ellipse">Quarter</div>
     <div class="container square">Square</div>
-    <div class="container triangle"></div>
+    <div class="container triangle">Triangle</div>
     </div>
   </body>
 </html>
