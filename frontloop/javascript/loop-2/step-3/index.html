@@ -15,7 +15,7 @@
         z-index: 0;
         background: deeppink;
         width: 14px;
-        height: 70px;
+        height: 90px;
         float: left;
       }
       .left{
@@ -32,19 +32,21 @@
         line-height: 70px;
         transition: 0.3s;
         height: 70px;
-        background: black;
         margin: 10px;
         color: white;
         text-align: center;
       }
       .small{
         width: 80px;
+        background: black;
       }
       .medium{
         width: 120px;
+        background: grey;
       }
-       .large{
+      .large{
         width: 160px;
+        background: lightgrey;
       }
     </style>
 </head>
@@ -77,16 +79,30 @@
       function moveCarousel(event) {
         if(event.target.classList.contains('right')){
           initial += 100;
+          if(initial > 370){
+            right.style.opacity = 0.5;
+            initial = 370;
+          }
         }
         else{
           initial -= 100;
-          initial = (initial < 0) ? 0 : initial
+          if(initial < 0){
+            initial = 0;
+            left.style.opacity = 0.5
+          }
+        }
+        if(initial > 0 && initial < 370){
+          left.style.opacity = 1;
+          right.style.opacity = 1;
         }
         for(let i = 0; i < elements.length; i++ ){
           debugger
           elements[i].style.transform =  'translateX(-'+initial+'px)';
         }
       }
+      left.style.left = document.querySelector('.container').offsetLeft+"px";
+      right.style.left = (document.querySelector('.container').offsetWidth+document.querySelector('.container').offsetLeft)+"px";
+
       right.addEventListener('click', moveCarousel);
       left.addEventListener('click', moveCarousel);
     </script>
