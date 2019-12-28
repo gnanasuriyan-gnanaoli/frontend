@@ -1,3 +1,4 @@
+#!/Users/surya/.rvm/rubies/ruby-2.5.1/bin/ruby
 require 'find'
 
 class AllLinksBuilder
