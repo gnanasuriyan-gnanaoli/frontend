@@ -1,0 +1,33 @@
+body {
+  min-width: 550px;  /* 2x LC width + RC width */
+}
+#container {
+  padding-left: 200px;   /* LC width */
+  padding-right: 150px;  /* RC width */
+  background: grey;
+}
+
+#container .column {
+  float: left;
+  position: relative;
+
+}
+#center {
+  background: yellowgreen;
+
+  width: 100%;
+}
+#left {
+  background: yellow;
+  width: 200px;        /* LC width */
+  margin-left: -100%;  
+  right: 200px;        /* LC width */
+}
+#right {
+  background: deeppink;
+  width: 150px;          /* RC width */
+  margin-right: -150px;  /* RC width */
+}
+#footer {
+  /*clear: both;*/
+}

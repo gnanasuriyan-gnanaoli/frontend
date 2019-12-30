@@ -1,0 +1,12 @@
+html{
+  font-size: 62.5%;
+}
+body{
+  background: deeppink;
+  color: white;
+}
+
+.button{
+  background: black;
+  border-radius: 0.3rem;
+}
