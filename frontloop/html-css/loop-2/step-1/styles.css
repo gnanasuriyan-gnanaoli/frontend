@@ -1,12 +1,154 @@
-html{
+html {
   font-size: 62.5%;
+  font-family: Roboto;
 }
-body{
-  background: deeppink;
+
+body {
+  background: rgb(209, 142, 138);
   color: white;
 }
 
-.button{
+.button {
   background: black;
   border-radius: 0.3rem;
+}
+
+main {
+  margin: 1rem auto;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav li {
+  opacity: 0.3;
+  color: lightgrey;
+  font-size: 6rem;
+  font-weight: 900;
+  padding: 3rem;
+  padding-left: 0rem;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+nav li:first-child {
+  opacity: 1;
+  color: white;
+}
+
+nav li:hover {
+  opacity: 0.8;
+}
+
+.container {
+  margin-top: 10rem;
+  display: grid;
+  grid-template-columns: auto 8rem 26rem 26rem 26rem 8rem auto;
+  grid-template-rows: auto 8rem 8rem 18rem auto;
+}
+
+.container nav {
+  white-space: nowrap;
+  grid-column: 3/6;
+  grid-row: 1/2;
+}
+
+.container article {
+  font-size: 1.6rem;
+  grid-column: 3/6;
+  grid-row: 2/3;
+}
+
+.container .left, .right {
+  background-color: white;
+  opacity: 0.3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .left {
+  grid-column: 2/2;
+  grid-row: 3/4;
+}
+
+.container .right {
+  grid-column: 6/7;
+  grid-row: 3/4;
+}
+
+.left:hover, .right:hover {
+  opacity: 1;
+}
+
+.leftarrow, .rightarrow {
+  width: 0;
+  height: 0;
+  border-top: 10px solid black;
+  border-right: 10px solid transparent;
+  transition: 1s;
+}
+
+.leftarrow {
+  transform: rotate(1035deg);
+}
+
+.rightarrow {
+  transform: rotate(-1305deg);
+}
+
+.container dl {
+  padding: 10rem 4rem;
+  font-size: 1.6rem;
+}
+
+.container dl, dd, dt {
+  margin: 0;
+}
+
+.container dt {
+  color: orange;
+  font-size: 1.6rem;
+}
+
+.container dd {
+  padding-top: 5px;
+  font-size: 2.3rem;
+  font-weight: 500;
+}
+
+.container #timer {
+  background-color: rgb(60, 60, 60);
+  grid-column: 3/4;
+  grid-row: 3/5;
+}
+
+.container #temp {
+  background-color: rgb(50, 50, 50);
+  grid-column: 4/5;
+  grid-row: 3/5;
+}
+
+.container #load {
+  background-color: rgb(30, 30, 30);
+  grid-column: 5/6;
+  grid-row: 3/5;
+}
+
+.container button {
+  text-transform: uppercase;
+  left: 2rem;
+  top: -2rem;
+  position: relative;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  width: 80%;
+  height: 4rem;
+  color: inherit;
+  background-color: black;
+  grid-column: 3/4;
+  grid-row: 5/6;
 }
