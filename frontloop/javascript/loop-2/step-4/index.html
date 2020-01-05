@@ -1,14 +1,138 @@
 <!doctype html>
 <html>
+
 <head>
-    <title>Validation</title>
+  <title>Validation</title>
+  <style>
+    html {
+      font-size: 62.5%;
+      font-family: Arial;
+    }
+
+    body {
+      background: blueviolet;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    form {
+      border-radius: 0.4rem;
+      box-shadow: 1px 1px 1px 1;
+      font-size: 1.6rem;
+      padding: 2rem;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    form>* {
+      margin: 1rem 0 1rem 0;
+    }
+
+    .text {
+      font: inherit;
+      outline: none;
+      border: 0px;
+      border-bottom: 1px solid black;
+      height: 3rem;
+    }
+
+    button {
+      height: 4rem;
+    }
+
+    .validation-text {
+      color: red;
+      display: none;
+    }
+
+    .empty {
+      outline: 1px solid red;
+    }
+  </style>
 </head>
+
 <body>
-    <!--
+  <!--
         Build a script for form validation.
         It should validate form on its submit and should support required fields, emails
         and field confirmation (should check if the value of the linked field is the same).
         If form is invalid it shouldn't be submitted and errors must be shown.
     -->
+  <form class="signup" action="welcome.html" id="form" method="post">
+    <label for="name">Name</label>
+    <input type="text" id="user-name" name="name" value="" class="text required"  data-validate="required-name">
+    <p class='validation-text' id="required-name">This field is required</p>
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" value="" class="text" data-validate="invalid-email">
+    <p class='validation-text' id="invalid-email">Invalid Email</p>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" value="" class="text required" data-validate="required-password">
+    <p class='validation-text' id="required-password">This field is required</p>
+    <label for="confirm">Confirm Password</label>
+    
+    <input type="password" id="confirm" name="confirm" value="" class="text" data-validate="password-conf">
+    <p class='validation-text' id="password-conf">Passwords don't match</p>
+    <button type="submit" name="submit" id="submit">Submit</button>
+  </form>
+  <script type="text/javascript">
+    (function() {
+      'use strict';
+      var email = document.getElementById('email');
+      var required = document.querySelectorAll('.required');
+      var password = document.getElementById('password');
+      var confirm = document.getElementById('confirm');
+      var submit = document.getElementById('submit');
+      var form = document.getElementById('form');
+      var validator = {
+        validateRequired: function() {
+          for (let i = 0; i < required.length; i++) {
+            if (required[i].value.length === 0){
+              validator.showRequired(required[i].getAttribute('data-validate'));
+            }
+            else{
+              validator.hideRequired(required[i].getAttribute('data-validate'));
+            }
+          }
+        },
+        validateEmail: function() {
+          if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)){
+            validator.hideRequired(email.getAttribute('data-validate'));
+          }
+          else{
+            validator.showRequired(email.getAttribute('data-validate'));
+          }
+        },
+        validateConfirm: function() {
+          if (password.value === confirm.value){
+            validator.hideRequired(confirm.getAttribute('data-validate'));
+          }
+          else{
+            validator.showRequired(confirm.getAttribute('data-validate'));
+          }
+        },
+        showRequired: function(id){
+          document.getElementById(id).style.display = 'block';
+        },
+        hideRequired: function(id){
+          document.getElementById(id).style.display = 'none';
+        }
+      }
+      function validate(event) {
+        validator.validateRequired();
+        validator.validateEmail();
+        validator.validateConfirm();
+        form.submit();
+      }
+      submit.addEventListener('click', validate);
+      
+    }());
+  </script>
 </body>
+
 </html>
