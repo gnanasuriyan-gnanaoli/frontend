@@ -64,7 +64,7 @@
         and field confirmation (should check if the value of the linked field is the same).
         If form is invalid it shouldn't be submitted and errors must be shown.
     -->
-  <form class="signup" action="welcome.html" id="form" method="post">
+  <form class="signup" id="form" method="post" action='welcome.html'>
     <label for="name">Name</label>
     <input type="text" id="user-name" name="name" value="" class="text required"  data-validate="required-name">
     <p class='validation-text' id="required-name">This field is required</p>
@@ -78,7 +78,7 @@
     
     <input type="password" id="confirm" name="confirm" value="" class="text" data-validate="password-conf">
     <p class='validation-text' id="password-conf">Passwords don't match</p>
-    <button type="submit" name="submit" id="submit">Submit</button>
+    <button type="button" name="button" id="button">Submit</button>
   </form>
   <script type="text/javascript">
     (function() {
@@ -87,33 +87,39 @@
       var required = document.querySelectorAll('.required');
       var password = document.getElementById('password');
       var confirm = document.getElementById('confirm');
-      var submit = document.getElementById('submit');
+      var button = document.getElementById('button');
       var form = document.getElementById('form');
       var validator = {
         validateRequired: function() {
           for (let i = 0; i < required.length; i++) {
             if (required[i].value.length === 0){
               validator.showRequired(required[i].getAttribute('data-validate'));
+              return false;
             }
             else{
               validator.hideRequired(required[i].getAttribute('data-validate'));
             }
           }
+          return true;
         },
         validateEmail: function() {
           if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)){
             validator.hideRequired(email.getAttribute('data-validate'));
+            return true;
           }
           else{
             validator.showRequired(email.getAttribute('data-validate'));
+            return false;
           }
         },
         validateConfirm: function() {
           if (password.value === confirm.value){
             validator.hideRequired(confirm.getAttribute('data-validate'));
+            return true;
           }
           else{
             validator.showRequired(confirm.getAttribute('data-validate'));
+            return false;
           }
         },
         showRequired: function(id){
@@ -124,12 +130,10 @@
         }
       }
       function validate(event) {
-        validator.validateRequired();
-        validator.validateEmail();
-        validator.validateConfirm();
-        form.submit();
+        validator.validateRequired() && validator.validateEmail() &&
+          validator.validateConfirm() && form.submit();
       }
-      submit.addEventListener('click', validate);
+      button.addEventListener('click', validate);
       
     }());
   </script>
