@@ -1,0 +1,16 @@
+{
+"companyName": "DefaultCompany",
+"productName": "avoid-the-blocks",
+"productVersion": "0.1",
+"dataUrl": "avoid-the-blocks-webgl.data.unityweb",
+"wasmCodeUrl": "avoid-the-blocks-webgl.wasm.code.unityweb",
+"wasmFrameworkUrl": "avoid-the-blocks-webgl.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": true,
+"multithreading": false,
+"unityVersion": "2019.2.17f1"
+}
