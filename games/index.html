@@ -12,11 +12,13 @@
     }
 
     .container {
-      height: 100vh;
+      background: #323330;
+      margin: 1rem auto;
+      width: 60vw;
       display: flex;
       font-size: 1.6rem;
       justify-content: center;
-      
+      flex-wrap: wrap;
     }
 
     .block {
@@ -28,13 +30,21 @@
       height: 10rem;
       background: deeppink;
       margin: 1rem;
-      box-shadow: 0 5px 4px 0 rgba(0,0,0,.26);
+      box-shadow: 0 5px 4px 0 rgba(0, 0, 0, .26);
       border-radius: 3%;
     }
-    .futura-blocks{
+
+    .futura-blocks {
       background: red;
     }
-    a{
+    .shit-happens{
+      background: MEDIUMSLATEBLUE;
+    }
+    .shit-follows{
+      background: gold;
+      color: #323330;
+    }
+    a {
       color: white;
       text-decoration: none;
     }
@@ -42,19 +52,23 @@
 </head>
 
 <body>
-  <h1>FREE GAMES</h1>
+  <h1>GAMES</h1>
   <div class="container">
-    
     <a href="Futura-Blocks/index.html">
         <div class="block futura-blocks">
           Futura Blocks
         </div>
     </a>
     <a href="../avoid-the-blocks/index.html">
-      <div class="block">
+      <div class="block shit-happens">
         ShitHappens
       </div>
-      </a>
+    </a>
+    <a href="shit-follows/index.html">
+      <div class="block shit-follows">
+        (Sh)it Follows
+      </div>
+    </a>
   </div>
 
 
