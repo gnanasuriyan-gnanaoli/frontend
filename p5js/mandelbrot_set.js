@@ -1,6 +1,9 @@
 var i = 0;
+var iteration_slider;
 function setup() {
-  max_iteration = 20
+  
+  // iteration_slider = createSlider(10, 150, 10, 10);
+  max_iteration = 150
   colorMode(HSB, max_iteration);
   createCanvas(350 * 3, 200 * 3);
   noStroke();
@@ -16,6 +19,12 @@ function scaleBetween(unscaledNum, minAllowed, maxAllowed, min, max) {
   return (maxAllowed - minAllowed) * (unscaledNum - min) / (max - min) + minAllowed;
 }
 
+function initialize(){
+  px = 0;
+  py = 0;
+  max_iteration = current_max_iteration;
+  background(255, width, height, 1);
+}
 function draw() {
   if(px < width)
   {
@@ -43,6 +52,38 @@ function draw() {
   }
 }
 
+
+
+// function draw() {
+//   current_max_iteration = iteration_slider.value();
+//   if(current_max_iteration != max_iteration){
+//     initialize();
+//   }
+//   if(px < width)
+//   {
+//     py = 0.0;
+//     while(py < height){
+//       // console.log(px+" "+py);
+//       x0 = scaleBetween(px, -2.5, 1, 0, width) // scaled x coordinate of pixel (scaled to lie in the Mandelbrot X scale (-2.5, 1))
+//       y0 = scaleBetween(py, -1, 1, 0, height) // scaled y coordinate of pixel (scaled to lie in the Mandelbrot Y scale (-1, 1))
+//       
+//       var iteration = 0
+//       var x = 0.0
+//       var y = 0.0
+//       while (x*x + y*y < 4 && iteration < max_iteration){
+//         xTemp = x*x - y*y + x0;
+//         y = y0 + 2 * x * y;
+//         x = xTemp;
+//         iteration = iteration + 1;
+//       }
+//       console.log("iteration "+iteration+" "+px+" "+py+" "+color(iteration, 180, 180));
+//       fill(color(iteration, 180, 180));
+//       ellipse(px, py, 1, 1);
+//       py = py +1;
+//     }
+//     px = px +1;
+//   }
+// }
 // function draw(){
 //   c = color( i = i+1, 0, 0);
 //   fill(c);
