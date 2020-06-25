@@ -4,12 +4,12 @@ var length;
 var currentAngle;
 var currentLength;
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(1000, 600);
   
-  angle_slider = createSlider(0.1, 2, 0.31, 0.01);
+  angle_slider = createSlider(0.1, 3, 0.31, 0.1);
   angle_slider.position(width+20, height/2);
 
-  length_slider = createSlider(1, 20, 16, 1);
+  length_slider = createSlider(1, 40, 16, 1);
   length_slider.position(width+20, height/2+20);
 
   shrub_count_slider = createSlider(100, 1000, 500, 20);
@@ -36,7 +36,7 @@ function draw(){
     for(m = 1; m <= currentRootCount; m++)
     {
       resetMatrix();
-      translate(0, height);
+      translate(width/2, height);
       collatz(m);
     }
   }
