@@ -6,10 +6,14 @@ var currentLength;
 function setup() {
   createCanvas(400, 400);
   
-  angle_slider = createSlider(0.1, 1, 0.31, 0.01);
+  angle_slider = createSlider(0.1, 2, 0.31, 0.01);
   angle_slider.position(width+20, height/2);
-  length_slider = createSlider(1, 20, 16  , 1);
+
+  length_slider = createSlider(1, 20, 16, 1);
   length_slider.position(width+20, height/2+20);
+
+  shrub_count_slider = createSlider(100, 1000, 500, 20);
+  shrub_count_slider.position(width+20, height/2+40);
   background(255);
   colorMode(HSB, 100);
   angle  = angle_slider.value();
@@ -17,16 +21,22 @@ function setup() {
 }
 
 function draw(){
-  if(currentAngle != angle_slider.value() || currentLength != length_slider.value()){
+  textSize(12);
+  text('Angle '+angle_slider.value(), width-70, height/2+5);
+  text('Length '+length_slider.value(), width-70, height/2+25);
+  text('Shrubs '+shrub_count_slider.value(), width-70, height/2+45);
+  fill(10, 10, 10);
+  if(currentAngle != angle_slider.value() || currentLength != length_slider.value() || currentRootCount != shrub_count_slider.value()){
     currentAngle = angle_slider.value();
     currentLength = length_slider.value();
+    currentRootCount = shrub_count_slider.value();
     length = length_slider.value();
     angle = currentAngle;
     background(255);
-    for(m = 1; m <= 500; m++)
+    for(m = 1; m <= currentRootCount; m++)
     {
       resetMatrix();
-      translate(width, height);
+      translate(0, height);
       collatz(m);
     }
   }
@@ -36,11 +46,11 @@ function collatz(n){
   while(n != 1){
     if(n % 2 == 0){
       n = n / 2;
-      turn('right');
+      turn('left');
     }
     else{
       n = 3 * n + 1;
-      turn('left');
+      turn('right');
     }
   }
 }
