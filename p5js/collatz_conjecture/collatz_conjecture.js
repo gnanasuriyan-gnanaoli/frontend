@@ -6,10 +6,10 @@ var currentLength;
 function setup() {
   createCanvas(400, 400);
   
-  angle_slider = createSlider(0.1, 1, 1, 0.01);
-  angle_slider.position(0, 0);
-  length_slider = createSlider(1, 20, 20  , 1);
-  length_slider.position(width, 0);
+  angle_slider = createSlider(0.1, 1, 0.31, 0.01);
+  angle_slider.position(width+20, height/2);
+  length_slider = createSlider(1, 20, 16  , 1);
+  length_slider.position(width+20, height/2+20);
   background(255);
   colorMode(HSB, 100);
   angle  = angle_slider.value();
@@ -23,10 +23,10 @@ function draw(){
     length = length_slider.value();
     angle = currentAngle;
     background(255);
-    for(m = 1; m <= 1000; m++)
+    for(m = 1; m <= 500; m++)
     {
       resetMatrix();
-      translate(0, height+20);
+      translate(width, height);
       collatz(m);
     }
   }
@@ -36,11 +36,11 @@ function collatz(n){
   while(n != 1){
     if(n % 2 == 0){
       n = n / 2;
-      turn('left');
+      turn('right');
     }
     else{
       n = 3 * n + 1;
-      turn('right');
+      turn('left');
     }
   }
 }
