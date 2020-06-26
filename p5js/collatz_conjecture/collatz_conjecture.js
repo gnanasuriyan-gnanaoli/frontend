@@ -26,7 +26,6 @@ function draw(){
   text('Angle '+angle_slider.value(), width-70, height/2+5);
   text('Length '+length_slider.value(), width-70, height/2+25);
   text('Shrubs '+shrub_count_slider.value(), width-70, height/2+45);
-  fill(10, 10, 10);
   if(currentAngle != angle_slider.value() || currentLength != length_slider.value() || currentRootCount != shrub_count_slider.value()){
     currentAngle = angle_slider.value();
     currentLength = length_slider.value();
