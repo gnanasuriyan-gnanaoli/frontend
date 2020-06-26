@@ -22,6 +22,7 @@ function branch(length){
   if(length < 4){
     return;
   }
+  strokeWeight(length * 0.05);
   line(0, 0, 0, -length);
   translate(0, -length);
 
