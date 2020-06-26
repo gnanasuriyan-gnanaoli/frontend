@@ -1,19 +1,20 @@
-var m = 5;
+var m;
 var angle;
 var length;
 var currentAngle;
 var currentLength;
+
 function setup() {
   createCanvas(1000, 600);
-  
-  angle_slider = createSlider(0.1, 3, 0.31, 0.1);
+  angle_slider = createSlider(0.1, 2*PI, 2*PI/4, 0.1);
   angle_slider.position(width+20, height/2);
-
+  angle_slider.style('width','400px');
   length_slider = createSlider(1, 40, 16, 1);
   length_slider.position(width+20, height/2+20);
-
+  length_slider.style('width','400px');
   shrub_count_slider = createSlider(100, 1000, 500, 20);
   shrub_count_slider.position(width+20, height/2+40);
+  shrub_count_slider.style('width','400px');
   background(255);
   colorMode(HSB, 100);
   angle  = angle_slider.value();
