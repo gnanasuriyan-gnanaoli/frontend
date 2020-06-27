@@ -16,10 +16,10 @@ function setup(){
   green_length_slider = createSlider(100, 450, 200, 50);
   yellow_length_slider= createSlider(100, 450, 200, 50);
 
-  red_length_slider.position(0, 20);
-  blue_length_slider.position(0, 60);
-  green_length_slider.position(0, 100);
-  yellow_length_slider.position(0, 140);
+  red_length_slider.position(0, offset+ 20);
+  blue_length_slider.position(0, offset+ 60);
+  green_length_slider.position(0, offset+ 100);
+  yellow_length_slider.position(0, offset+ 140);
   
   red_angle_slider = createSlider(1, 3 * PI/5, 1, 0.1);
   blue_angle_slider = createSlider(1, 3 * PI/5, 1, 0.1);
@@ -34,22 +34,26 @@ function setup(){
 
 function draw(){
   background(225);
+  fill('black');
+  text('Length', offset , red_length_slider.y-15)
+  text('Angle(degrees) ', offset, red_angle_slider.y-15)
   fill('red');
   textSize(16);
-  text('Red Length '+red_length_slider.value(), red_length_slider.x, red_length_slider.y+10);
-  text('Red Angle '+red_angle_slider.value(), red_angle_slider.x, red_angle_slider.y+10);
+  
+  text(red_length_slider.value(), red_length_slider.x+offset, red_length_slider.y+10);
+  text(Math.trunc(red_angle_slider.value()*180/PI), red_angle_slider.x+offset, red_angle_slider.y+10);
 
   fill('blue');
-  text('Blue Length '+blue_length_slider.value(), blue_length_slider.x, blue_length_slider.y+10);
-  text('Blue Angle '+blue_angle_slider.value(), blue_angle_slider.x, blue_angle_slider.y+10);
+  text(blue_length_slider.value(), blue_length_slider.x+offset, blue_length_slider.y+10);
+  text(Math.trunc(blue_angle_slider.value()*180/PI), blue_angle_slider.x+offset, blue_angle_slider.y+10);
 
   fill('Green');
-  text('Green Length '+green_length_slider.value(), green_length_slider.x, green_length_slider.y+10);
-  text('Green Angle '+green_angle_slider.value(), green_angle_slider.x, green_angle_slider.y+10);
+  text(green_length_slider.value(), green_length_slider.x+offset, green_length_slider.y+10);
+  text(Math.trunc(green_angle_slider.value()*180/PI), green_angle_slider.x+offset, green_angle_slider.y+10);
 
   fill('yellow');
-  text('Yellow Length '+yellow_length_slider.value(), yellow_length_slider.x, yellow_length_slider.y+10);
-  text('Yellow Angle '+yellow_angle_slider.value(), yellow_angle_slider.x, yellow_angle_slider.y+10);
+  text(yellow_length_slider.value(), yellow_length_slider.x+offset, yellow_length_slider.y+10);
+  text(Math.trunc(yellow_angle_slider.value()*180/PI), yellow_angle_slider.x+offset, yellow_angle_slider.y+10);
   
   
   
