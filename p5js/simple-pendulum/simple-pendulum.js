@@ -11,10 +11,10 @@ function setup(){
 
   createCanvas(900, 475).position(140, 0, 'absolute');
 
-  red_length_slider = createSlider(100, 450, 100, 50);
-  blue_length_slider = createSlider(100, 450, 150, 50);
-  green_length_slider = createSlider(100, 450, 200, 50);
-  yellow_length_slider= createSlider(100, 450, 200, 50);
+  red_length_slider = createSlider(100, 400, 100, 50);
+  blue_length_slider = createSlider(100, 400, 150, 50);
+  green_length_slider = createSlider(100, 400, 200, 50);
+  yellow_length_slider= createSlider(100, 400, 200, 50);
 
   red_length_slider.position(0, offset+ 20);
   blue_length_slider.position(0, offset+ 60);
@@ -25,6 +25,7 @@ function setup(){
   blue_angle_slider = createSlider(1, 3 * PI/5, 1, 0.1);
   green_angle_slider = createSlider(1, 3 * PI/5, 1, 0.1);
   yellow_angle_slider= createSlider(1, 3 * PI/5, PI/2, 0.1);
+
   red_angle_slider.position(0, height-160);
   blue_angle_slider.position(0, height-120);
   green_angle_slider.position(0, height-80);
@@ -41,24 +42,20 @@ function draw(){
   textSize(16);
   
   text(red_length_slider.value(), red_length_slider.x+offset, red_length_slider.y+10);
-  text(Math.trunc(red_angle_slider.value()*180/PI), red_angle_slider.x+offset, red_angle_slider.y+10);
+  text(floorF(red_angle_slider.value()*180/PI), red_angle_slider.x+offset, red_angle_slider.y+10);
 
   fill('blue');
   text(blue_length_slider.value(), blue_length_slider.x+offset, blue_length_slider.y+10);
-  text(Math.trunc(blue_angle_slider.value()*180/PI), blue_angle_slider.x+offset, blue_angle_slider.y+10);
+  text(floorF(blue_angle_slider.value()*180/PI), blue_angle_slider.x+offset, blue_angle_slider.y+10);
 
   fill('Green');
   text(green_length_slider.value(), green_length_slider.x+offset, green_length_slider.y+10);
-  text(Math.trunc(green_angle_slider.value()*180/PI), green_angle_slider.x+offset, green_angle_slider.y+10);
+  text(floorF(green_angle_slider.value()*180/PI), green_angle_slider.x+offset, green_angle_slider.y+10);
 
   fill('yellow');
   text(yellow_length_slider.value(), yellow_length_slider.x+offset, yellow_length_slider.y+10);
-  text(Math.trunc(yellow_angle_slider.value()*180/PI), yellow_angle_slider.x+offset, yellow_angle_slider.y+10);
-  
-  
-  
-  
-  
+  text(floorF(yellow_angle_slider.value()*180/PI), yellow_angle_slider.x+offset, yellow_angle_slider.y+10);
+
   create_pendulum(red_length_slider.value(), 'red', red_angle_slider.value());
   create_pendulum(blue_length_slider.value(), 'blue', blue_angle_slider.value());
   create_pendulum(green_length_slider.value(), 'green', green_angle_slider.value());
@@ -80,3 +77,11 @@ function draw_pendulum(x,y, color){
   fill(color_map[color].r, color_map[color].g, color_map[color].b, color_map[color].a);
   ellipse(x, y, 30);
 }
+
+
+
+function floorF(figure, decimals){
+    if (!decimals) decimals = 2;
+    var d = Math.pow(10,decimals);
+    return (parseInt(figure*d)/d).toFixed(decimals);
+};
