@@ -78,8 +78,6 @@ function draw_pendulum(x,y, color){
   ellipse(x, y, 30);
 }
 
-
-
 function floorF(figure, decimals){
     if (!decimals) decimals = 2;
     var d = Math.pow(10,decimals);
