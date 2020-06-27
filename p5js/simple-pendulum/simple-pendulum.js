@@ -16,39 +16,40 @@ function setup(){
   green_length_slider = createSlider(100, 450, 200, 50);
   yellow_length_slider= createSlider(100, 450, 200, 50);
 
-  red_length_slider.position(0, 0);
-  blue_length_slider.position(0, 20);
-  green_length_slider.position(0, 40);
-  yellow_length_slider.position(0, 60);
+  red_length_slider.position(0, 20);
+  blue_length_slider.position(0, 60);
+  green_length_slider.position(0, 100);
+  yellow_length_slider.position(0, 140);
   
   red_angle_slider = createSlider(1, 3 * PI/5, 1, 0.1);
   blue_angle_slider = createSlider(1, 3 * PI/5, 1, 0.1);
   green_angle_slider = createSlider(1, 3 * PI/5, 1, 0.1);
   yellow_angle_slider= createSlider(1, 3 * PI/5, PI/2, 0.1);
-  red_angle_slider.position(0, height-80);
-  blue_angle_slider.position(0, height-60);
-  green_angle_slider.position(0, height-40);
-  yellow_angle_slider.position(0, height-20);
+  red_angle_slider.position(0, height-160);
+  blue_angle_slider.position(0, height-120);
+  green_angle_slider.position(0, height-80);
+  yellow_angle_slider.position(0, height-40);
 
 }
 
 function draw(){
   background(225);
   fill('red');
+  textSize(16);
   text('Red Length '+red_length_slider.value(), red_length_slider.x, red_length_slider.y+10);
   text('Red Angle '+red_angle_slider.value(), red_angle_slider.x, red_angle_slider.y+10);
 
   fill('blue');
-  text('blue Length '+blue_length_slider.value(), blue_length_slider.x, blue_length_slider.y+10);
-  text('blue Angle '+blue_angle_slider.value(), blue_angle_slider.x, blue_angle_slider.y+10);
+  text('Blue Length '+blue_length_slider.value(), blue_length_slider.x, blue_length_slider.y+10);
+  text('Blue Angle '+blue_angle_slider.value(), blue_angle_slider.x, blue_angle_slider.y+10);
 
-  fill('green');
-  text('green Length '+green_length_slider.value(), green_length_slider.x, green_length_slider.y+10);
-  text('green Angle '+green_angle_slider.value(), green_angle_slider.x, green_angle_slider.y+10);
+  fill('Green');
+  text('Green Length '+green_length_slider.value(), green_length_slider.x, green_length_slider.y+10);
+  text('Green Angle '+green_angle_slider.value(), green_angle_slider.x, green_angle_slider.y+10);
 
   fill('yellow');
-  text('yellow Length '+yellow_length_slider.value(), yellow_length_slider.x, yellow_length_slider.y+10);
-  text('yellow Angle '+yellow_angle_slider.value(), yellow_angle_slider.x, yellow_angle_slider.y+10);
+  text('Yellow Length '+yellow_length_slider.value(), yellow_length_slider.x, yellow_length_slider.y+10);
+  text('Yellow Angle '+yellow_angle_slider.value(), yellow_angle_slider.x, yellow_angle_slider.y+10);
   
   
   
