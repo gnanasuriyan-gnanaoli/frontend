@@ -1,23 +1,119 @@
-// variables : X F
-// constants : + − [ ]
-// start : X
-// rules : (X → F+[[X]-X]-F[-FX]+X), (F → FF)
-// angle : 25°
+//KOLAM
+// axiom = (-D--D)
+// A -> F++FFFF--F--FFFF++F++FFFF--F
+// B -> F--FFFF++F++FFFF--F--FFFF++F
+// C -> BFA--BFA
+// D -> CFC--CFC
+// angle = 45
 
-angle = 0;
-current_sentence = 'X';
-length = 200
-
-count = 0;
+current_sentence = '-D--D';
 rules = {
-  'X': 'F+[[X]-X]-F[-FX]+X',
-  'F': 'FF'
+  'A': 'F++FFFF--F--FFFF++F++FFFF--F',
+  'B': 'F--FFFF++F++FFFF--F--FFFF++F',
+  'C': 'BFA--BFA',
+  'D': 'CFC--CFC'
 }
+angle = 45 * 3.141592 / 180
+length = 150
+
+
+
+//KOLAM
+// axiom = F+F+F+F
+// F -> F+F-F+F+F
+// angle = 90
+// current_sentence = 'F+F+F+F';
+// rules = {
+//   'F': 'F+F-F+F+F'
+// }
+// angle = 90 * 3.141592 / 180
+// length = 150
+
+
+// Hexagonal gospher
+// axiom = XF
+// X -> X+YF++YF-FX--FXFX-YF+
+// Y -> -FX+YFYF++YF+FX--FX-Y
+// angle = 60
+// current_sentence = 'XF';
+// rules = {
+//   'X': 'X+YF++YF-FX--FXFX-YF+',
+//   'Y': '-FX+YFYF++YF+FX--FX-Y'
+// }
+// angle = 60 * 3.141592 / 180
+// length = 100
+
+
+
+//snowflake
+// axiom = F++F++F
+// F -> F-F++F-F
+// angle = 60
+
+
+// current_sentence = 'F++F++F';
+// rules = {
+//   'F': 'F-F++F-F'
+// }
+// angle = 60 * 3.141592 / 180
+// length = 50
+
+// weed
+// axiom = F
+// F -> FF-[XY]+[XY]
+// X -> +FY
+// Y -> -FX
+// angle = 22.5
+
+// current_sentence = 'F';
+// rules = {
+//   'F': 'FF-[XY]+[XY]',
+//   'X': '+FY',
+//   'Y': '-FX'
+// }
+// angle = 22.5 * 3.141592 / 180
+// length = 300
+
+
+
+//bushes
+// axiom = F
+// F -> FF+[+F-F-F]-[-F+F+F]
+// current_sentence = 'F';
+// rules = {
+//   'F': 'FF+[+F-F-F]-[-F+F+F]'
+// }
+// angle = 22.5 * 3.141592 / 180
+// length = 150
+
+
+
+
+
+//bushes
+// axiom = Y
+// X -> X[-FFF][+FFF]FX
+// Y -> YFX[+Y][-Y]
+// current_sentence = 'Y';
+// rules = {
+//   'X': 'X[-FFF][+FFF]FX',
+//   'Y': 'YFX[+Y][-Y]'
+// }
+// angle = 25.7 * 3.141592 / 180
+// length = 350
+
+//fractal-plants
+//length = 200
+//angle = 25 * 3.141592 /180
+//current_sentence = 'X';
+// rules = {
+//   'X': 'F+[[X]-X]-F[-FX]+X',
+//   'F': 'FF'
+// }
 
 function setup() {
-  createCanvas(600, 600).center();
-  background(51);
-  angle = radians(25);
+  createCanvas(600, 650).center();
+  background(0);
   button = createButton('Generate');
   button.style('width: 200px; height: 30px;');
   button.mousePressed(generate);
@@ -27,7 +123,6 @@ function setup() {
 }
 
 function initialize(){
-  count = 0;
   background(0);
   current_sentence = 'X';
   resetMatrix();
@@ -35,9 +130,7 @@ function initialize(){
 
 }
 function generate(){
-  if(count > 6)
-    return;
-  length *= 0.5  ;
+  length *= 0.5;
   new_sentence = '';
   for(i = 0; i < current_sentence.length; i++){
     if(rules[current_sentence.charAt(i)] != undefined)
@@ -59,18 +152,18 @@ function generate(){
 //    which are restored when the corresponding "]" is executed.
 
 function turtle(){
+  background(255)
   resetMatrix();
-  translate(100, height);
-  rotate(angle);
+  translate(45, height/2);
   strokeWeight(2);
-  if(count < 3)
-    strokeWeight(4);
+  stroke(255,0,0);
+  // stroke(100, 255, 100, 200);
+  // stroke(144, 198, 250);
+  // noStroke();
+  // fill(144, 198, 250);
   point(0,0);
-  stroke(100, 255, 100, 200);
 
-  count++;  
   for(i = 0; i < current_sentence.length; i++){
-    // stroke(100, 255, 100, 200);
     switch (current_sentence.charAt(i)) {
       case 'F':
         line(0, 0, 0, -length);
