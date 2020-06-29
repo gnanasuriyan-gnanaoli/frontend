@@ -1,31 +1,59 @@
 radius = 40;
 time = 0;
 wave = [];
+var noOfCircles;
 function setup() {
-  createCanvas(400, 400).center();
+
+  createCanvas(1000, 600);
+  slider = createSlider(1, 100, 3, 1);
+  noOfCircles = slider.value();
 }
 
 function draw() {
+  noOfCircles = slider.value();
   background(0);
-  translate(width/2 -100, height/2);
+  textSize(16);
   stroke(255);
+  text("No of Circles : "+slider.value(), width- 140, height-3);
+
+  translate(width/2 - width/3, height/2);
+  stroke('yellow');
   strokeWeight(2);
   noFill();
-  ellipse(0, 0, radius*2);
-  time = time + 0.05;
-  
-  line(0, 0, radius * cos(time), radius * sin(time));
-  fill(255);
-  ellipse(radius * cos(time), radius * sin(time), 8)
-  wave.unshift(radius * sin(time));
-  line(radius * cos(time), radius * sin(time), 2*radius, wave[0])
+
+  time = time + 0.04;
+  x = 0;
+  y = 0;
+  i = 1;
+  outer_radius = 15 *8 * 4 / PI;
+  for(i = 0; i < noOfCircles; i++){
+    prevx = x;
+    prevy = y;
+    n = i * 2 +1;
+    radius = 15 *8 * 4 /(n * PI);
+    
+    ellipse(prevx, prevy, radius*2);
+    x += radius * cos(n * time);
+    y += radius * sin(n * time);
+    
+    stroke(255, 0, 0);
+    line(prevx, prevy, x, y);
+    if(i === noOfCircles -1){
+     fill('yellow');
+     ellipse(x, y, 10, 10);
+     wave.unshift(y);
+     stroke(255, 0, 0);
+     line(x, y, 1.5 *outer_radius , wave[0])
+    }  
+  }
   beginShape();
   noFill();
+  stroke(0, 0, 255);
   for(i = 0; i <= wave.length; i++){
-    vertex(i + 2* radius, wave[i]);
+    vertex(i + 1.5* outer_radius, wave[i]);
   }
   endShape();
-  wave = wave.slice(0, 200);
+  wave = wave.slice(0, 600);
 }
 
 function fourierSeries(x, n, period){
