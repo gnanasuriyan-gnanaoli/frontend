@@ -25,7 +25,7 @@ function draw() {
     vertex(i + 2* radius, wave[i]);
   }
   endShape();
-
+  wave = wave.slice(0, 200);
 }
 
 function fourierSeries(x, n, period){
