@@ -1,0 +1,139 @@
+:root{
+  --red: #ac1313;
+}
+
+body{
+  font-family: Poppins, sans-serif;
+  /* margin: 0 17.5% 0 17.5%; */
+}
+
+/* .nav{
+  padding: 12 0 12 0;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+}
+.float-left{
+  float: left;
+}
+.heading {
+  font-family: Pacifico, sans-serif;
+  font-size: 34px;
+}
+.nav li{
+  float: right;
+  list-style: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 21px 20px;
+}
+*/
+.red{
+  color: var(--red, red);
+} 
+
+#sticky-nav{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 65%;
+  padding: 0 17.5% ;
+  background: #fff;
+}
+.nav-flex{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-flex .heading-flex {
+  font-family: Pacifico, sans-serif;
+  font-size: 34px;
+  margin: 0;
+}
+
+.nav-links{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links li{
+  list-style: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 20px 21px;
+}
+
+
+.shopping{
+  border-left: 1px solid #ebebeb;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+#hero-section .hero-background-image{
+  height: 100vh;
+  background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0.3), hsla(0, 0%, 100%, 0.3)), url(https://assets.website-files.com/5ba96977bf120e1b45986c06/5bc26c68ca643a35ff2e403f_scott-webb-268893-unsplash.jpg);
+  background-repeat: no-repeat;
+
+  
+}
+.hero-flex{
+  margin: 0 17.5%;
+  padding-top: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.hero-image{
+  width: 1000px;
+  height: 500px;
+  background-image: url("https://assets.website-files.com/5ba96977bf120e1b45986c06/5e602d43ad635f0fe2d06a05_Untitled-2d2%20(2).png");
+  background-repeat: no-repeat;
+  background-size: 800px;
+}
+
+.hero-text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+}
+
+.hero-text .title{
+  margin-bottom: -20px;
+  font-size: 14px;
+  line-height: 24px;
+  color: #d77474;
+  font-weight: 400;
+}
+
+.hero-text .sub-title{
+  margin: 20px 0;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 58px;
+}
+
+.hero-text .description{
+  font-size: 12px;
+  font-weight: 200;
+  color: darkgrey;
+}
+
+.shop-collection-btn{
+  background-color: var(--red, red);
+  color: #fff;
+  padding: 20px 40px;
+  border: none;
+  margin-top: 20px;
+}
