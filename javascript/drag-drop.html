@@ -27,8 +27,8 @@
     }
 
     .button{
-      width: 100px;
-      height: 100px;
+      /* width: 100px;
+      height: 100px; */
       background-color: #66757F;
     }
     .columns{
@@ -49,13 +49,15 @@
   </main>
   <aside id='side'>
     <div  >
-      <div class='button'draggable='true' ondragstart='drag(event)' id='button'>Button</div>
+      <div class='button'draggable='true' ondragstart='drag(event)' id='button'><button type="button" name="button">Test Button</button></div>
     </div>
     <div class='columns' draggable='true' ondragstart='drag(event)' id='column'>
       <div class=col1></div>
       <div class=col2></div>
     </div>
-    <div class='para'>Paragraph</div>
+    <div class='para' draggable='true' ondragstart='drag(event)' id='para'>
+      <p>Sample paragraph</p>
+    </div>
   </aside>
   <script type="text/javascript">
     function drag(ev) {
@@ -67,7 +69,7 @@
     function drop(ev) {
       ev.preventDefault();
       var data = ev.dataTransfer.getData("text");
-      parent1 = document.getElementById(data).parentElement;
+      var parent1 = document.getElementById(data).parentElement;
       parent1Html = parent1.getInnerHTML();
       samplediv = document.createElement('div');
       samplediv.appendChild(document.getElementById(data));

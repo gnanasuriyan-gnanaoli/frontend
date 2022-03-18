@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Tip calculator app</title>
+  <style media="screen">
+  html{
+    font-family: 'Space Mono';
+    font-size: 1rem;
+  }
+  :root {
+    --light-grey: hsl(197, 41%, 96%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan1: hsl(186, 14%, 43%);
+    --dark-grayish-cyan2: hsl(184, 14%, 56%);
+    --light-grayish-cyan1: hsl(185, 41%, 84%);
+    --light-grayish-cyan2: hsl(189, 41%, 97%);
+    --bright-cyan: hsl(171, 64%, 46%);
+  }
+
+  .pallete {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pallete>div {
+    width: 100%;
+  }
+
+  .pallete>.very-dark-cyan {
+    background-color: var(--very-dark-cyan);
+  }
+
+  .pallete>.dark-grayish-cyan1 {
+    background-color: var(--dark-grayish-cyan1);
+  }
+
+  .pallete>.dark-grayish-cyan2 {
+    background-color: var(--dark-grayish-cyan2);
+  }
+
+  .pallete>.light-grayish-cyan1 {
+    background-color: var(--light-grayish-cyan1);
+  }
+
+  .pallete>.light-grayish-cyan2 {
+    background-color: var(--light-grayish-cyan2);
+  }
+
+  .pallete>.bright-cyan {
+    background-color: var(--bright-cyan);
+  }
+
+  .pallete>.light-grey {
+    background-color: var(--light-grey);
+  }
+
+  body {
+    
+    background-color: var(--light-grayish-cyan1);
+    display: flex;
+    margin: 0;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+  }
+
+  .title {
+    color: var(--dark-grayish-cyan1);
+    margin: auto;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    margin: 40px auto;
+  }
+
+  .app {
+    display: flex;
+    width: 850px;
+    min-height: 450px;
+    margin: auto;
+    background-color: white;
+    border-radius: 16px;
+    /* max-width: calc(100% - 50px); */
+  }
+
+  @media only screen and (max-width: 800px) {
+    .app {
+      max-width: 100vw;
+      flex-direction: column-reverse;
+      width: 100vw;
+      margin: 0;
+    }
+  }
+
+  .app>div {
+    margin: 30px;
+  }
+
+  .app>.calculator {
+    flex: 0.5;
+  }
+
+  .app>.result {
+    flex: 0.5;
+    background-color: var(--very-dark-cyan);
+    color: white;
+    border-radius: inherit;
+  }
+
+  label {
+    color: var(--dark-grayish-cyan1);
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  input[type=text] {
+    background: var(--light-grey);
+    display: block;
+    background-image: url(images/icon-dollar.svg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-position-x: 10px;
+    width: 100%;
+    border-radius: 4px;
+    border: none;
+    padding: 4px;
+    box-sizing: border-box;
+    text-align: right;
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--very-dark-cyan);
+    font-weight: 700;
+  }
+
+  input[type=text].no-of-people {
+    background-image: url(images/icon-person.svg);
+  }
+
+  input[type=text]::focus {
+    border: 2px solid var(--bright-cyan);
+  }
+
+  input[type=text]::placeholder {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+
+  input {
+    margin: 0 0 10px 0;
+  }
+
+  .tip-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  .tip-container label {
+    line-height: 45px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    background-color: var(--very-dark-cyan);
+    width: 105px;
+    height: 45px;
+    border-radius: 4px;
+    color: white;
+    margin-bottom: 14px;
+  }
+
+  .tip-container .custom {
+    background: var(--light-grey);
+    color: var(--dark-grayish-cyan1);
+    font-weight: 600;
+  }
+
+  input[type=radio] {
+    opacity: 0;
+    position: fixed;
+    width: 1px;
+  }
+
+  .tip-container input[type=radio]:checked+label {
+    background: var(--bright-cyan);
+    color: var(--very-dark-cyan);
+  }
+
+  .tip-container input[type=radio]:focus+label {
+    border: 2px dashed var(--bright-cyan);
+  }
+
+  .result {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 700;
+  }
+
+  .result .tip-amount,
+  .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .result .label,
+  .per-person {
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+
+  .result .per-person {
+    font-size: 0.75rem;
+    color: var(--dark-grayish-cyan1);
+  }
+
+  .result .tip-value {
+    font-size: 2.25rem;
+    color: var(--bright-cyan);
+  }
+
+  .reset {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    background: var(--bright-cyan);
+    color: var(--very-dark-cyan);
+    font: inherit;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  </style>
+  
+</head>
+<body>
+<!-- <div class="pallete">
+  <div class="very-dark-cyan">Very dark cyan: var(--very-dark-cyan)</div>
+  <div class="dark-grayish-cyan1">Dark grayish cyan: var(--dark-grayish-cyan1)</div>
+  <div class="dark-grayish-cyan2">Dark grayish cyan: var(--dark-grayish-cyan2)</div>
+  <div class="light-grayish-cyan1">Light grayish cyan: var(--light-grayish-cyan1)</div>
+  <div class="light-grayish-cyan2">Light grayish cyan: var(--light-grayish-cyan2)</div>
+  <div class="bright-cyan">Bright cyan: var(--bright-cyan)</div>
+</div> -->
+  <div class="container">
+    <div class="title">
+      SPLITTER
+    </div>
+    <div class="app">
+      <div class="calculator">
+        <label for="bill">Bill</label>
+        <input type="text" id='bill' autofocus>
+        <label for="tip">Select Tip %</label>
+        <div class="tip-container" id='tip-container'>
+          <input type="radio" value='5' name='tip' checked='checked' id='five'>
+          <label for="five">5%</label>
+          <input type="radio" value='10' name='tip' id='ten'>
+          <label for="ten">10%</label>
+          <input type="radio" value='15' name='tip' id='fifteen'>
+          <label for="fifteen">15%</label>
+          <input type="radio" value='20' name='tip' id='twenty'>
+          <label for="twenty">20%</label>
+          <input type="radio" value='25' name='tip' id='twenty-five'>
+          <label for="twenty-five">20%</label>
+          <input type="radio" value='0' name='tip' id='custom'>
+          <label for="custom" class='custom'>Custom</label>
+        </div>
+        <label for="no-of-people">Number of people</label>
+        <input type="text" name="no-of-people" id="no-of-people" class='no-of-people' value="1">
+      </div>
+      <div class="result">
+        <div class="summary">
+          <div class="tip-amount">
+            <div class="left">
+              <div class="label">
+                Tip Amount
+              </div>
+              <div class="per-person">
+                / person
+              </div>
+            </div>
+            <div class="tip-value" id='tip-amount'>
+              $0
+            </div>
+          </div>
+          <div class="total">
+            <div class="left">
+              <div class="label">
+                Total
+              </div>
+              <div class="per-person">
+                / person
+              </div>
+            </div>
+            <div class="tip-value"  id='total'>
+              $0
+            </div>
+          </div>
+        </div>
+        <!-- <div class="reset"> -->
+          <button type="button" name="reset" id='reset' class='reset'>RESET</button>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript">
+  
+  bill = document.getElementById('bill');
+  
+  document.querySelector('input[id="bill"]').addEventListener('input', updateTip);
+  document.querySelector('input[id="bill"]').addEventListener('change', updateTip);
+  document.querySelector('#tip-container').addEventListener('click', updateTip);
+  // document.querySelector('#tip-container').addEventListener('change', updateTip);
+  document.querySelector('input[id="no-of-people"]').addEventListener('input', updateTip);
+  updateTip();
+  function updateTip(){
+    tip_amount = document.getElementById('tip-amount');
+    per_person_tip = (document.querySelector('input[id="bill"]').value * document.querySelector('input[name="tip"]:checked').value / (100));
+    tip_amount.textContent = '$'+per_person_tip;
+    document.querySelector('#total').textContent = '$'+(per_person_tip / document.querySelector('input[id="no-of-people"]').value).toFixed(2);
+  }
+  document.querySelector('#reset').addEventListener('click', reset);
+  function reset(){
+    document.querySelector('input[id="bill"]').value = '0';
+    document.querySelector('#five').checked = 'checked';
+    updateTip();
+  }
+</script>
+</html>
