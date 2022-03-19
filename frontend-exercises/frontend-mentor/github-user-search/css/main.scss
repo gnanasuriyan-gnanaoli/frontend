@@ -1,0 +1,116 @@
+$dark-blue: #141C2F;
+$lighter-dark-blue: #1f2b48;
+$blue: #0476FC;
+h6{
+  margin: 1.5rem 0;
+  color: grey;
+  margin: 1rem 0;
+  // text-align: center;
+}
+h5{
+  margin: 1.5rem 0;
+  color: white;
+  // text-align: center;
+  margin: 1rem 0;
+}
+html{
+  font-size: 1rem;
+  font-family: "system-ui",sans-serif;
+  color: #fff;
+}
+body{
+  background-color: $dark-blue;
+}
+
+.container{
+  width: 40rem;
+  margin: 10rem auto;
+}
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .app-title{
+    font-weight: 700;
+  }
+  .mode{
+    display: flex;
+    align-items: center;
+    img{
+      height: 1.5rem;
+      filter: invert(100%);
+      margin-left: 1rem;
+    }
+  }
+}
+.search{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: $lighter-dark-blue;
+  border-radius: 0.5rem;
+  input[type=text]{
+    color: #fff;
+    border:none;
+    background: url('../images/search-blue.svg');
+    text-indent: 1.5rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    &:focus{
+      outline: none;
+    }
+    &::placeholder{
+      color: #fff;
+      font-family: monospace;
+    }
+  }
+  button{
+    background-color: $blue;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+  }
+}
+.result{
+  background: $lighter-dark-blue;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  display: flex;
+  color: grey;
+  aside{
+    .avatar{
+      border-radius: 50%;
+      height: 6.25rem;
+    }
+  margin-right: 2rem;
+  }
+  main{
+    font-family: monospace;
+    flex: 1;
+    header{
+      display: flex;
+      justify-content: space-between;
+      .name{
+        color: white;
+        font-weight: 400;
+        font-size: 1.5rem;
+      }
+    }
+    .details{
+      background: $dark-blue;
+      border-radius: 0.25rem;
+      display: flex;
+      margin: 1rem 0;
+      padding: 0 1.5rem;
+      > *{
+        // margin-right: 3rem;
+        flex: 0.3;
+      }
+    }
+  }
+}
+
+

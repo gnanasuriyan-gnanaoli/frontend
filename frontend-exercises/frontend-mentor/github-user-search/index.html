@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Github user search</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class='nav'>
+        <div class="app-title">devfinder</div>
+        <div class="mode">
+          <span class=''>Light</span>
+          <img src="images/sun.svg" alt="light-mode">
+        </div>
+      </header>
+      <div class="search">
+        <input type="text" name="search" value="" placeholder="Search Github username..." id='search-box'>
+        <button type="button" name="button">Search</button>
+      </div>
+      <div class="result" id='result'>
+        Your results
+      </div>
+    </div>
+
+    <script id='user-details'type="text/x-handlebars-template">
+      <aside>
+        <img src='{{avatar_url}}' alt='{{login}}' class='avatar'>
+      </aside>
+      <main id='main'>
+        <header>
+          <div class="name">
+            <div>{{name}}</div>
+            <a href="https://www.github.com/{{login}}">@{{login}}</a>
+            <h6>{{bio}}</h6>
+          </div>
+          <div class="joined">
+            Joined {{created_at}}
+          </div>
+        </header>
+        <div class="details">
+          <div class="repos">
+            <h6>Repos</h6>
+            <h5>{{public_repos}}</h5>
+          </div>
+          <div class="followers">
+            <h6>Followers</h6>
+            <h5>{{followers}}</h5>
+          </div>
+          <div class="following">
+            <h6>Following</h6>
+            <h5>{{following}}</h5>
+          </div>
+        </div>
+      </main>
+    </script>
+    <script type="text/javascript">
+      TIMEOUT = 500;
+      TOKEN = 'SUMMA';
+      document.getElementById('search-box').addEventListener('keyup', debounce( (event) => { fetchUser(event) }, TIMEOUT));
+      function fetchUser(event){
+        query = event.target.value;
+        fetch('https://api.github.com/users/'+query, {
+          headers: {
+            authorization: `token ${TOKEN}`
+          }
+        })
+        .then(response => response.json())
+        .then(data => (appendData(data)));
+      }
+      function appendData(data){
+        console.log(data);
+        if(data.created_at && data.created_at.length){
+          processData(data)
+          userTemplate = Handlebars.compile(document.getElementById('user-details').innerHTML);
+          document.getElementById('result').innerHTML = userTemplate(data);
+        }
+        else{
+          document.getElementById('result').innerHTML = 'User not found!!!';
+        }
+      }
+      function processData(data){
+        
+        Object.assign(data, {created_at: new Date(data.created_at).toDateString(), bio: (data.bio && data.bio.length) ? data.bio : "This user has no bio"})
+      }
+      function debounce(callback, wait) {
+          let timeout;
+          return (...args) => {
+              const context = this;
+              clearTimeout(timeout);
+              timeout = setTimeout(() => callback.apply(context, args), wait);
+          };
+      }
+    </script>
+  </body>
+</html>
