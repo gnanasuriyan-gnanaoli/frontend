@@ -1,0 +1,127 @@
+html {
+  font-family: system-ui;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+body {
+  margin: 0;
+}
+
+nav {
+  color: white;
+  display: flex;
+  align-items: center;
+  background: #2A2D31;
+  justify-content: space-between;
+}
+nav h1.title {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 16px;
+  padding-right: 16px;
+  border-right: 1px solid white;
+}
+nav .menu {
+  background: #35393E;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  padding: 27px 21px;
+  margin-right: 16px;
+}
+nav .menu:hover {
+  background: #E46643;
+}
+
+.left, .right {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  border: none;
+}
+
+.btn {
+  margin: 0 16px;
+  border: none;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  color: white;
+  background: #E46643;
+  padding: 12px;
+  font-size: 15px;
+  line-height: 18px;
+}
+.btn-primary .icon {
+  padding-right: 8px;
+  width: 15px;
+}
+
+.btn-primary:hover {
+  background: #F39765;
+}
+
+.markdown-container {
+  display: flex;
+  width: 100vw;
+  height: calc(100vh - 72px);
+}
+.markdown-container .markdown {
+  border-right: 1px solid #e4e4e4;
+}
+.markdown-container .markdown, .markdown-container .preview {
+  flex: 1;
+}
+.markdown-container .title {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #7c8187;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background: #F5F5F5;
+}
+.markdown-container .title .icon {
+  height: 12px;
+}
+.markdown-container .text textarea {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  line-height: 18px;
+  font-size: 18px;
+}
+.markdown-container .text textarea:focus {
+  outline: none;
+}
+.markdown-container .text, .markdown-container #output {
+  height: 100%;
+  padding: 12px;
+  font-family: monospace;
+}
+.markdown-container #output h1, .markdown-container #output h2, .markdown-container #output h3, .markdown-container #output p {
+  margin: 0;
+}
+.markdown-container #output p {
+  text-align: justify;
+}
+.markdown-container #output .block {
+  padding: 0 4px;
+  border-radius: 4px;
+  border: 1px solid deeppink;
+  background: white;
+  color: deeppink;
+}
+.markdown-container #output blockquote {
+  border-left: 4px solid grey;
+  padding-left: 4px;
+}
+
+/*# sourceMappingURL=main.css.map */

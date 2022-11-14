@@ -1,0 +1,33 @@
+{
+  "name": "How to guide builder",
+  "action": {},
+  "manifest_version": 3,
+  "version": "0.1",
+  "description": "Records your steps and builds a how to guide.",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting",
+    "storage",
+    "desktopCapture"
+  ],
+  "host_permissions": [
+    "*://*/*",
+    "<all_urls>",
+    "*://hhnigonbiimcifcbammppemblmnogmfd/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "How to guide"
+  },
+  "web_accessible_resources":[{
+    "resources": [ "assets/complete.svg" ],
+    "matches": ["<all_urls>"]
+  }]
+}
+
+
+

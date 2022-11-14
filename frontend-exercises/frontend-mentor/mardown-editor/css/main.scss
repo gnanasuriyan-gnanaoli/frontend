@@ -1,0 +1,145 @@
+$black: #2A2D31;
+$orange: #E46643;
+$light-orange: #F39765;
+$grey: #35393E;
+$light-white: #F5F5F5;
+$light-grey: #e4e4e4;
+$color-1000: #151619;
+$color-900: #1d1f22;
+$color-800: #2b2d31;
+$color-700: #35393f;
+$color-600: #5a6069;
+$color-500: #7c8187;
+$color-400: #c1c4cb;
+$color-300: #e4e4e4;
+$color-200: #f5f5f5;
+$color-100: #ffffff;
+
+html{
+  font-family: system-ui;
+  font-size: 14px;
+  line-height: 1.6;
+  
+}
+body{
+  margin: 0;
+}
+nav{
+  h1.title{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 16px;
+    padding-right: 16px;
+    border-right: 1px solid white;
+  }
+  .menu{
+    background: $grey;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    padding: 27px 21px;
+    margin-right: 16px;
+  }
+  .menu:hover{
+    background: $orange;
+  }
+  color: white;
+  display: flex;
+  align-items: center;
+  
+  background: $black;
+  justify-content: space-between;
+}
+.left, .right{
+  display: flex;
+  align-items: center;
+}
+
+button{
+  border: none;
+}
+.btn{
+  margin: 0 16px;
+  border: none;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+}
+.btn-primary{
+  color: white;
+  background: $orange;
+  padding: 12px;
+  font-size: 15px;
+  .icon{
+      padding-right: 8px;
+      width: 15px;
+  }
+  line-height: 18px;
+}
+
+.btn-primary:hover{
+  background: $light-orange;
+}
+
+.markdown-container{
+  display: flex;
+  width: 100vw;
+  height: calc(100vh - 72px);
+  .markdown{
+    border-right: 1px solid $light-grey;
+  }
+  .markdown, .preview{
+    flex: 1;
+  }
+  .title{
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $color-500;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    background: $light-white;
+    .icon{
+      height: 12px;
+    }
+  }
+  .text{
+
+    textarea{
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      border: none;
+      line-height: 18px;
+      font-size: 18px;
+      
+    }
+    textarea:focus{
+      outline: none;
+    }
+  }
+  .text, #output{
+    height: 100%;
+    padding: 12px;
+    font-family: monospace;
+  }
+  #output{
+    h1,h2,h3,p{
+      margin: 0;
+    }
+    p{
+      text-align: justify;
+    }
+    .block{
+      padding: 0 4px;
+      border-radius: 4px;
+      border: 1px solid deeppink;
+      background: white;
+      color: deeppink;
+    }
+    blockquote{
+      border-left: 4px solid grey;
+      padding-left: 4px;
+    }
+  }
+}

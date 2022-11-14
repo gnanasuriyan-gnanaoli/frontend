@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <title>Markdown editor</title>
+  <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <nav>
+      <div class="left">
+        <button class="menu">
+          <img src="assets/icon-menu.svg" alt="">
+        </button>
+        
+        <h1 class='title'>Markdown</h1>
+      </div>
+      <div class="right">
+        <img src="assets/icon-delete.svg" alt="" class='icon'>
+        <button type="button" name="button" class='btn-primary btn'>
+          <img src="assets/icon-save.svg" alt="" class='icon'>
+          Save Changes
+        </button>
+      </div>
+    </nav>
+    <div class="markdown-container">
+      <div class="markdown">
+        <div class="title">
+          Markdown
+        </div>
+        <div class="text">
+          <textarea name="markdown-area" id='mardown-text'></textarea>
+        </div>
+      </div>
+      <div class="preview">
+        <div class="title">
+          Preview
+          <img src="assets/icon-show-preview.svg" alt="" class='icon'>
+        </div>
+        <div id="output">
+          
+        </div>
+      </div>
+    </div>
+  </body>
+  
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function(event) {
+      console.log('dom content loaded'); 
+      document.getElementById('mardown-text').oninput = showPreview;
+    });
+    
+    function showPreview(event){
+      let output = document.getElementById('output');
+      output.innerHTML = '';
+      let appendHTML = '';
+      event.target.value.split('\n').forEach((line, i) => {
+        appendHTML = tokeniseLine(line);
+        
+        output.innerHTML += appendHTML;
+      });
+    }
+    
+    function tokeniseLine(line){
+      line = line.replace(/\*\*.+?\*\*/, "<b>$&</b>").replaceAll('**', '')
+      line = line.replace(/\*.+?\*/, "<i>$&</i>").replaceAll('*', '')
+      line = line.replace(/`.+?`/, "<span class='block'>$&</span>").replaceAll('`', '')
+      line = line.replaceAll("\\n", "<br/>")
+      if(line.startsWith('###')){
+        return `<h3>${line.substring(3)}<h3>`
+      }
+      else if(line.startsWith('##')){
+        return `<h2>${line.substring(2)}<h2>`
+      }
+      else if(line.startsWith('#')){
+        return `<h1>${line.substring(1)}<h1>`
+      }
+      else if(line.startsWith('-')){
+        return `<li>${line.substring(1)}</li>`
+      }
+      else if(line.startsWith('>')){
+        return `<blockquote>${line.substring(1)}</blockquote>`
+      }
+      else{
+        return `<p>${line}</p>`;
+      }
+      
+    }
+  </script>
+</html>

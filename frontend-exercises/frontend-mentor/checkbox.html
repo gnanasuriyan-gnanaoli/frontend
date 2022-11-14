@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      
+      
+      input[type=checkbox]{
+        display: none;
+      }
+      input[type=checkbox] + label{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;	
+        background-image: url(https://www.svgrepo.com/show/9337/eye.svg);
+      }
+      input[type=checkbox]:checked + label{
+        background-image: url(https://www.svgrepo.com/show/17912/warning.svg);
+      }
+      
+    </style>
+  </head>
+  <body>
+    <input id="myInput" type="checkbox" name="myInput"/>
+    <label for="myInput"></label>
+  </body>
+</html>

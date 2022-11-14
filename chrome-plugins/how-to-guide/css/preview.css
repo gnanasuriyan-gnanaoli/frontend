@@ -1,0 +1,10 @@
+body{
+  margin: auto;
+  width: 960px;
+  font-family: monospace;
+  font-size: 14px;
+}
+img {
+  max-width: 100%;
+  border-radius: 16px;
+}

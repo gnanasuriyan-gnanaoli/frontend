@@ -1,0 +1,43 @@
+/* button:hover, a:hover {
+    border: 3px solid blue !important;
+    margin: -1px;
+} */
+body{
+  font-family: monospace;
+}
+.htg-actions{
+  width: 4  0px;
+  background: deeppink;
+  top: 50vh;
+  position: absolute;
+  border-radius: 8px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+}
+.htg-actions .action{
+  padding: 8px 16px; 
+  margin: 20px auto;
+  min-width: 40px;
+  height: 20px;
+  border-radius: 8px;
+  background: white;
+  color: black;
+}
+
+.highlight-wrap{
+  border: 3px solid #FF7442;
+  border: 3px solid deeppink;
+  border-radius: 8px;
+  position: absolute;
+  cursor: default;
+  pointer-events: none;
+  z-index: 10000;
+}
+.htg-screenshot{
+  display: block;
+  width: 960px;
+  max-width: 100%;
+  border-radius: 16px;
+  margin: 40px auto;
+}

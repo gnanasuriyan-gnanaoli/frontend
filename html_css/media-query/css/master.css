@@ -1,0 +1,85 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  height: 100vh;
+}
+
+header {
+  padding: 10px;
+  background-color: #0D1528;
+}
+
+nav {
+  padding: 10px;
+  background-color: #F03D4D;
+}
+
+.hero {
+  flex: 1;
+  padding: 10px;
+  background-color: #4D85C6;
+}
+
+article {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  padding: 10px;
+  background-color: #23354B;
+}
+
+aside {
+  padding: 10px;
+  background-color: deeppink;
+}
+
+footer {
+  padding: 10px;
+  background-color: #FFD168;
+}
+
+@media screen and (max-width: 600px) {
+  article {
+    background-color: orange;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  aside {
+    flex: 1;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .top-bar {
+    display: flex;
+  }
+  .top-bar header {
+    flex: 0.9;
+  }
+  .top-bar nav {
+    flex: 0.2;
+  }
+
+  article {
+    flex-direction: row;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  aside {
+    flex: 0.3;
+  }
+}
+
+/*# sourceMappingURL=master.css.map */

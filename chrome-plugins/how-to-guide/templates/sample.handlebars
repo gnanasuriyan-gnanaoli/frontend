@@ -1,0 +1,16 @@
+<div class="container" style="margin: auto;
+width: 960px;
+font-family: monospace;
+font-size: 14px;">
+  
+</div>
+{{#each this}}
+<div class="entry">
+  <h1>{{action}}</h1>
+  <div class="body">
+    Type {{value}}
+  </div>
+  <img src="{{screenshot}}" alt="" class='screenshot' style="max-width: 100%;
+  border-radius: 16px;">
+</div>
+{{/each}}

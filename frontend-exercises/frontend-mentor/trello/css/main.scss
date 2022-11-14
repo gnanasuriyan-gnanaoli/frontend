@@ -1,0 +1,43 @@
+$color-one: #f2dcdb;
+$color-two: #e5e0ec;
+$color-three: #dbeef3;
+
+html{
+  font-size: 16px;
+  font-family: "Trebuchet MS", sans-serif;
+  color: black;
+}
+
+header{
+  text-align: center;
+  width: 100%;
+  padding: 1rem 0;
+  background: $color-one;
+  margin: 1rem 0;
+}
+
+*{
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+.container{
+  display: flex;
+  gap: 1rem;
+}
+
+.column{
+  flex-basis: 20%;
+  min-height: 90vh;
+  background: $color-two;
+  padding: 1.5rem;
+  h1{
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .task{
+    color: black;
+    background: $color-three;
+    margin: 1rem 0;
+    padding: 1rem 1.5rem;
+  }
+}
